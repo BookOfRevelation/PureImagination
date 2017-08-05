@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>jinggle.wav</file>
+        <file>pisplash.jpg</file>
+        <file>jingglebitcrush.wav</file>
+        <file>jinggledownsampling.wav</file>
+        <file>jinggleghost.wav</file>
+        <file>jinggleretrigger.wav</file>
+        <file>pisplashbitcrush.jpg</file>
+        <file>pisplashdownsampling.jpg</file>
+        <file>pisplashghost.jpg</file>
+        <file>pisplashretrigger.jpg</file>
+        <file>jinggleold.wav</file>
+        <file>pisplashold.jpg</file>
+        <file>effects/filter.png</file>
+        <file>effects/loader.png</file>
+        <file>effects/saver.png</file>
+        <file>effects/transformater.png</file>
+        <file>bg.png</file>
+    </qresource>
+</RCC>

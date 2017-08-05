@@ -1,0 +1,35 @@
+#ifndef IMAGELOADER_H
+#define IMAGELOADER_H
+#include "pureloader.h"
+#include <QVector>
+#include <QPair>
+#include <QImage>
+
+class ImageLoader : public PureLoader
+{
+public:
+    ImageLoader();
+
+    PureCore::PureType getOutputType();
+
+    bool init();
+    void process();
+
+    QPair<QString, QString> getInfo()
+    {
+       return  QPair<QString, QString>(
+                    "Loader Image",
+                    "Loader permettant d'injecter\n"
+                    "dans la chaîne de traitement\n"
+                    "une séquence d'images présente\n"
+                    "sur le disque dur."
+                    );
+    }
+
+private:
+
+    QStringList filePaths;
+    QVector<QPair<QImage, QString>> images;
+};
+
+#endif // IMAGELOADER_H
