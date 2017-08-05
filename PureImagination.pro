@@ -55,7 +55,9 @@ SOURCES += main.cpp\
     pureaudio.cpp \
     wavloader.cpp \
     melteffect.cpp \
-    gifloader.cpp
+    gifloader.cpp \
+    gifsaver.cpp \
+    subliminaleffect.cpp
 
 HEADERS  += mainwindow.h \
     gempuzzleeffect.h \
@@ -99,7 +101,10 @@ HEADERS  += mainwindow.h \
     pureaudio.h \
     wavloader.h \
     melteffect.h \
-    gifloader.h
+    gifloader.h \
+    gif.h \
+    gifsaver.h \
+    subliminaleffect.h
 
 FORMS    +=
 

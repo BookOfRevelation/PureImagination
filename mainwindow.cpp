@@ -24,6 +24,7 @@
 #include "wavloader.h"
 #include "wavbinimage.h"
 #include "melteffect.h"
+#include "gifsaver.h"
 #include <QSplashScreen>
 #include <QSound>
 #include <QCoreApplication>
@@ -175,12 +176,13 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new ImageSaver(), "Images");
         addEffect(new SymbioticMessEffect(), "SymbioticMess");
         addEffect(new AnaglyphEffect(), "Anaglyph");
-        addEffect(new TiltShiftEffect(), "TiltShifting");
+        //addEffect(new TiltShiftEffect(), "TiltShifting");
         addEffect(new WavLoader(), "Wave");
         addEffect(new WavBinImage(), "Wave binary Image");
         addEffect(new MeltEffect(), "MeltEffect");
         addEffect(new CompositionEffect(), "Composition");
         addEffect(new GifLoader(), "Animated Gif");
+        addEffect(new GifSaver(), "Animateg Gif");
 
 
         pbar = new QProgressBar;
