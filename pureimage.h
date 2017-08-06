@@ -10,6 +10,7 @@ public:
     int getImageCount() const;
     QImage& getImage(int i);
     QString getName(int i) const;
+    void setName(int i, const QString &name);
 
 
     void addImage(QImage img, const QString& name);

@@ -24,6 +24,7 @@
 #include "wavloader.h"
 #include "wavbinimage.h"
 #include "melteffect.h"
+#include "subliminaleffect.h"
 #include "gifsaver.h"
 #include <QSplashScreen>
 #include <QSound>
@@ -183,6 +184,7 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new CompositionEffect(), "Composition");
         addEffect(new GifLoader(), "Animated Gif");
         addEffect(new GifSaver(), "Animateg Gif");
+        addEffect(new SubliminalEffect, "Subliminal Effect");
 
 
         pbar = new QProgressBar;

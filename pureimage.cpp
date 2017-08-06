@@ -1,5 +1,5 @@
 #include "pureimage.h"
-
+#include <QDebug>
 PureImage::PureImage()
     : PureData()
 {
@@ -19,6 +19,11 @@ QImage& PureImage::getImage(int i)
 QString PureImage::getName(int i) const
 {
     return images[i].second;
+}
+
+void PureImage::setName(int i, const QString &name)
+{
+    images[i].second = name;
 }
 
 void PureImage::addImage(QImage img, const QString &name)
