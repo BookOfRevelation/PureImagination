@@ -3,13 +3,14 @@
 #include <QWheelEvent>
 #include <QScrollBar>
 #include <QFileDialog>
+#include "pureconfiguration.h"
 
 PureView::PureView()
     : QGraphicsView()
 {
     translating = false;
     scaleFactor = 1.0;
-    setStyleSheet("background-image: url(:/res/bg.png);");
+    setStyleSheet(QString("background-image: url(%1);").arg(PureConfiguration::bgName));
 }
 
 
@@ -83,6 +84,8 @@ void PureView::mouseDoubleClickEvent(QMouseEvent *event)
         {
             this->setStyleSheet(QString("background-image: url(%1);").arg(fileName));
         }
+
+        PureConfiguration::bgName = fileName;
     }
 
 }

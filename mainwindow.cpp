@@ -32,6 +32,7 @@
 #include <QTime>
 #include <QMessageBox>
 #include <QGraphicsBlurEffect>
+#include "pureconfiguration.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -214,6 +215,8 @@ MainWindow::~MainWindow()
     }
 
     effects.clear();
+
+    PureConfiguration::saveConf();
 
 }
 

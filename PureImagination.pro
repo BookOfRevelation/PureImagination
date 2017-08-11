@@ -57,7 +57,8 @@ SOURCES += main.cpp\
     melteffect.cpp \
     gifloader.cpp \
     gifsaver.cpp \
-    subliminaleffect.cpp
+    subliminaleffect.cpp \
+    pureconfiguration.cpp
 
 HEADERS  += mainwindow.h \
     gempuzzleeffect.h \
@@ -104,7 +105,8 @@ HEADERS  += mainwindow.h \
     gifloader.h \
     gif.h \
     gifsaver.h \
-    subliminaleffect.h
+    subliminaleffect.h \
+    pureconfiguration.h
 
 FORMS    +=
 
