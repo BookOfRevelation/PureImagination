@@ -1,7 +1,6 @@
 #ifndef PURESCENE_H
 #define PURESCENE_H
 
-#define SPACING  10
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
 #include <QPainter>
@@ -35,9 +34,13 @@ signals:
 
 
 private:
+
+    static constexpr int marginRight = 10;
     QVector<QPair<EffectGraphicsItem*, PureEffect*>> eitems;
 
     QGraphicsItem* hovered;
+
+    int curWidth;
 
 
 

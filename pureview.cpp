@@ -5,7 +5,7 @@
 PureView::PureView()
     : QGraphicsView()
 {
-
+    translating = false;
     scaleFactor = 1.0;
     setStyleSheet("background-image: url(:/res/bg.png);");
 }
@@ -37,9 +37,32 @@ void PureView::wheelEvent(QWheelEvent *event)
             horizontalScrollBar()->setValue(move.x() + horizontalScrollBar()->value());
             verticalScrollBar()->setValue(move.y() + verticalScrollBar()->value());
         }
+}
 
+void PureView::mousePressEvent(QMouseEvent *event)
+{
+    QGraphicsView::mousePressEvent(event);
+    if(event->button() == Qt::MidButton)
+    {
+        translating = true;
+    }
+}
 
+void PureView::mouseReleaseEvent(QMouseEvent *event)
+{
+    QGraphicsView::mouseReleaseEvent(event);
+    translating = false;
+}
 
+void PureView::mouseMoveEvent(QMouseEvent *event)
+{
+    QGraphicsView::mouseMoveEvent(event);
+    if(translating)
+    {
+        int x = event->x();
+        int y = event->y();
 
+        this->centerOn(x,y);
 
+    }
 }

@@ -77,11 +77,12 @@ MainWindow::MainWindow(QWidget *parent) :
     effzone->addLayout(sLt);
     effzone->addWidget(effectTree);
     hz = new HelpZone();
-    hz->setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::MinimumExpanding));
+    //hz->setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::MinimumExpanding));
     effzone->addWidget(hz);
 
     effectPart = new QWidget;
     effectPart->setLayout(effectLt);
+
 
     connect(researchZone, &QLineEdit::textChanged, this, &MainWindow::filterList);
 
@@ -93,7 +94,7 @@ MainWindow::MainWindow(QWidget *parent) :
     scene = new PureScene();
     view = new PureView();
     view->setScene(scene);
-    mainLt->addWidget(view);
+    mainLt->addWidget(view,1);
 
     connect(effectTree, QTreeWidget::itemDoubleClicked, this, [this](QTreeWidgetItem *item, int column)
     {

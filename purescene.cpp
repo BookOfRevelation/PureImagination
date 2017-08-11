@@ -9,6 +9,7 @@ PureScene::PureScene()
 {
 
     hovered = nullptr;
+    curWidth = 0;
 }
 
 
@@ -17,6 +18,7 @@ void PureScene::clean()
     this->clear();
     eitems.clear();
     hovered = nullptr;
+    curWidth = 0;
 
 }
 
@@ -42,16 +44,32 @@ void PureScene::addEffect(PureEffect *e)
             break;
         }
 
-        QPixmap pm(QString(":/res/effects/%1.png").arg(file));
+        QString type;
+        PureCore::PureType t = e->getInputType();
+        if(t == PureCore::NoType)
+        {
+            t = e->getOutputType();
+        }
+
+        switch(t)
+        {
+        case PureCore::Image:
+            type = "-img-e";
+            break;
+        default:
+            type = "";
+            break;
+        }
+
+        QPixmap pm(QString(":/res/effects/%1%2.png").arg(file).arg(type));
 
         EffectGraphicsItem* pitem = new EffectGraphicsItem(e);
         pitem->setPixmap(pm);
 
         this->addItem(pitem);
-        int posx = pm.width() * eitems.size();
-        posx += SPACING * eitems.size();
+        pitem->setPos(curWidth, 0.0);
 
-        pitem->setPos(posx, 0.0);
+        curWidth = curWidth + marginRight + pm.width();
 
         connect(pitem, &EffectGraphicsItem::overIn, this, &PureScene::hoverInEffect);
         connect(pitem, &EffectGraphicsItem::overOut, this, &PureScene::hoverOutEffect);

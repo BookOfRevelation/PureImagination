@@ -1,5 +1,5 @@
 #include "effectgraphicsitem.h"
-
+#include <QGraphicsSceneMouseEvent>
 EffectGraphicsItem::EffectGraphicsItem(PureEffect* e)
     :QObject(), QGraphicsPixmapItem(), effect(e), hover(false)
 {
@@ -27,8 +27,7 @@ void EffectGraphicsItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *e)
 
 void EffectGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent * e)
 {
-    Q_UNUSED(e);
-    if(hover)
+    if(hover && e->button() == Qt::LeftButton)
     {
         emit pressedItem(this);
     }

@@ -17,5 +17,8 @@
         <file>effects/saver.png</file>
         <file>effects/transformater.png</file>
         <file>bg.png</file>
+        <file>effects/filter-img-e.png</file>
+        <file>effects/loader-img-e.png</file>
+        <file>effects/saver-img-e.png</file>
     </qresource>
 </RCC>

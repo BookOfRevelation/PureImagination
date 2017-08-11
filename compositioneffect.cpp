@@ -185,7 +185,7 @@ void CompositionWidget::onImageLoad()
     QFileDialog dialog(nullptr);
     dialog.setDirectory(PureCore::lastOpenDir);
     dialog.setFileMode(QFileDialog::ExistingFiles);
-    dialog.setNameFilter("Images (*.jpg *.png)");
+    dialog.setNameFilter("Images (*.jpg *.png *.gif)");
     if(dialog.exec())
     {
         filePath = dialog.selectedFiles();
