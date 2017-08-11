@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QToolBar* tb = this->addToolBar("");
     tb->addAction("Run", this, MainWindow::run);
-    tb->addAction("Clear", this, MainWindow::clear);
+    tb->addAction("New", this, MainWindow::clear);
 
     currentEffect = nullptr;
     statusbar = new QStatusBar;
@@ -104,9 +104,14 @@ MainWindow::MainWindow(QWidget *parent) :
             PureTreeItem* i = dynamic_cast<PureTreeItem*>(item);
             if(i)
             {
-                this->showEffect(i->getEffect());
-                PureCore::currentOutput = i->getEffect()->getOutputType();
-                updateEnabledEffects();
+                PureEffect* e = i->getEffect();
+                if(e->init())
+                {
+                    this->showEffect(e);
+                    PureCore::currentOutput = e->getOutputType();
+                    updateEnabledEffects();
+                }
+
             }
         }
 
@@ -367,16 +372,23 @@ void MainWindow::updateEnabledEffects()
 
 void MainWindow::clear()
 {
-    if(PureCore::currentData)
+
+    if(QMessageBox::question(
+                this,
+                "Confirmation",
+                "Êtes vous sûr de vouloir effacer le traitement actuel ?"
+                ) == QMessageBox::Yes)
     {
-        delete PureCore::currentData;
-        PureCore::currentData = nullptr;
+        if(PureCore::currentData)
+        {
+            delete PureCore::currentData;
+            PureCore::currentData = nullptr;
+        }
+        PureCore::currentOutput = PureCore::NoType;
+        scene->clean();
+
+        updateEnabledEffects();
     }
-    PureCore::currentOutput = PureCore::NoType;
-    scene->clean();
-
-    updateEnabledEffects();
-
 }
 
 

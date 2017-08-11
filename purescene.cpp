@@ -24,8 +24,7 @@ void PureScene::clean()
 
 void PureScene::addEffect(PureEffect *e)
 {
-    if(e->init())
-    {
+
         PureCore::PureNature n = e->getNature();
         QString file;
         switch(n)
@@ -79,7 +78,6 @@ void PureScene::addEffect(PureEffect *e)
         });
         eitems.push_back(QPair<EffectGraphicsItem*, PureEffect*>(pitem, e));
 
-    }
 
 }
 
