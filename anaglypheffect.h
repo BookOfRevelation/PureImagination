@@ -53,7 +53,7 @@ private:
 class AnaglyphEffect : public PureFilter
 {
 public:
-    AnaglyphEffect();
+    AnaglyphEffect(const QString& n);
     virtual ~AnaglyphEffect();
 
     bool init();

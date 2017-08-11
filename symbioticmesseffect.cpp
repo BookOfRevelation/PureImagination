@@ -5,8 +5,8 @@
 #include <QTime>
 #include "pureimage.h"
 
-SymbioticMessEffect::SymbioticMessEffect()
-    : PureFilter()
+SymbioticMessEffect::SymbioticMessEffect(const QString &n)
+    : PureFilter(n)
 {
     gemwidget = new SymbioticMessWidget();
 }

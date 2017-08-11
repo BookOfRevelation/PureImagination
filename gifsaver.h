@@ -5,7 +5,7 @@
 class GifSaver : public PureSaver
 {
 public:
-    GifSaver();
+    GifSaver(const QString &n);
 
     PureCore::PureType getInputType();
 

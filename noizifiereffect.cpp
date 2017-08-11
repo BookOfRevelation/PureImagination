@@ -5,8 +5,8 @@
 #include <QTime>
 #include "pureimage.h"
 
-NoizifierEffect::NoizifierEffect()
-    : PureFilter(),sequence(false), targetDir("")
+NoizifierEffect::NoizifierEffect(const QString &n)
+    : PureFilter(n),sequence(false), targetDir("")
 {
     gemwidget = new NoizifierWidget(this);
 }

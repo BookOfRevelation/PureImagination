@@ -6,7 +6,7 @@
 class PureFilter : public PureEffect
 {
 public:
-    PureFilter();
+    PureFilter(const QString& n);
 
     virtual PureCore::PureNature getNature();
 };

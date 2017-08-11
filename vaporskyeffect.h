@@ -38,7 +38,7 @@ private:
 class VaporSkyEffect : public PureFilter
 {
 public:
-    VaporSkyEffect();
+    VaporSkyEffect(const QString &n);
     virtual ~VaporSkyEffect();
 
     bool init();

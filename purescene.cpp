@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsOpacityEffect>
+#include <QGraphicsTextItem>
 
 PureScene::PureScene()
     : QGraphicsScene()
@@ -67,6 +68,12 @@ void PureScene::addEffect(PureEffect *e)
 
         this->addItem(pitem);
         pitem->setPos(curWidth, 0.0);
+
+
+        QGraphicsTextItem* tit = this->addText(e->name);
+        tit->setDefaultTextColor(Qt::white);
+        tit->setPos(curWidth, pm.height()-25);
+
 
         curWidth = curWidth + marginRight + pm.width();
 

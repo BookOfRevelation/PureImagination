@@ -31,7 +31,7 @@ private:
 class VisualDownSamplingEffect : public PureFilter
 {
 public:
-    VisualDownSamplingEffect();
+    VisualDownSamplingEffect(const QString &n);
     virtual ~VisualDownSamplingEffect();
 
     bool init();

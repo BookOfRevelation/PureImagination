@@ -9,7 +9,7 @@
 class TangleFusionEffect : public PureFilter
 {
 public:
-    TangleFusionEffect();
+    TangleFusionEffect(const QString &n);
     bool init();
 
     void process();

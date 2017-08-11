@@ -35,7 +35,7 @@ private:
 class NoizifierEffect  : public PureFilter
 {
 public:
-    NoizifierEffect();
+    NoizifierEffect(const QString &n);
     virtual ~NoizifierEffect();
 
     bool init();

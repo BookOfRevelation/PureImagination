@@ -9,7 +9,7 @@
 class MeltEffect : public PureFilter
 {
 public:
-    MeltEffect();
+    MeltEffect(const QString &n);
     bool init();
 
     void process();

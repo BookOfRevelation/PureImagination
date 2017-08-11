@@ -7,8 +7,8 @@
 #include <QTime>
 
 
-RgbToHsv::RgbToHsv()
-    : PureFilter(),sequence(false), targetDir("")
+RgbToHsv::RgbToHsv(const QString &n)
+    : PureFilter(n),sequence(false), targetDir("")
 {
 }
 

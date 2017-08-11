@@ -2,8 +2,8 @@
 #include <QFileDialog>
 #include "pureimage.h"
 
-SubliminalEffect::SubliminalEffect()
-    : PureFilter()
+SubliminalEffect::SubliminalEffect(const QString &n)
+    : PureFilter(n)
 {
     widget = new SubliminalWidget;
 }

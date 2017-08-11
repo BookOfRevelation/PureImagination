@@ -4,7 +4,8 @@
 #include "gif.h"
 
 
-GifSaver::GifSaver()
+GifSaver::GifSaver(const QString &n)
+    : PureSaver(n)
 {
     targetPath = "";
 }

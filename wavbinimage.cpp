@@ -28,8 +28,8 @@ void WavBinWidget::goPressed()
     this->accept();
 }
 
-WavBinImage::WavBinImage()
-    : PureTransformater()
+WavBinImage::WavBinImage(const QString &n)
+    : PureTransformater(n)
 {
     w = new WavBinWidget;
 }

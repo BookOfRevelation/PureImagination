@@ -32,7 +32,7 @@ private:
 class VisualCrushEffect : public PureFilter
 {
 public:
-    VisualCrushEffect();
+    VisualCrushEffect(const QString &n);
     virtual ~VisualCrushEffect();
 
     bool init();

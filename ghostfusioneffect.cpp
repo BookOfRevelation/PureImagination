@@ -5,8 +5,8 @@
 #include <QTime>
 #include "pureimage.h"
 
-GhostFusionEffect::GhostFusionEffect()
-    : PureFilter(), fileName("")
+GhostFusionEffect::GhostFusionEffect(const QString &n)
+    : PureFilter(n), fileName("")
 {
 
 }

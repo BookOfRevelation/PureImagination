@@ -4,8 +4,8 @@
 #include <QBoxLayout>
 #include <QTime>
 
-OldVcrEffect::OldVcrEffect()
-    : PureFilter()
+OldVcrEffect::OldVcrEffect(const QString &n)
+    : PureFilter(n)
 {
     gemwidget = new OldVcrWidget();
 }

@@ -49,7 +49,7 @@ private:
 class ModuloPushEffect : public PureFilter
 {
 public:
-    ModuloPushEffect();
+    ModuloPushEffect(const QString &n);
     virtual ~ModuloPushEffect();
 
     bool init();

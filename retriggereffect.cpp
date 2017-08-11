@@ -6,8 +6,8 @@
 #include "pureimage.h"
 
 
-RetriggerEffect::RetriggerEffect()
-    :  PureFilter()
+RetriggerEffect::RetriggerEffect(const QString &n)
+    :  PureFilter(n)
 {
     gemwidget = new RetriggerWidget();
 }

@@ -5,8 +5,8 @@
 #include <QBoxLayout>
 #include <QTime>
 
-VaporSkyEffect::VaporSkyEffect()
-    : PureFilter(),sequence(false), targetDir("")
+VaporSkyEffect::VaporSkyEffect(const QString &n)
+    : PureFilter(n),sequence(false), targetDir("")
 {
     gemwidget = new VaporSkyWidget(this);
 }

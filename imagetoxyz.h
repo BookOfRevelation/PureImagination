@@ -6,7 +6,7 @@
 class ImageToXYZ  : public PureTransformater
 {
 public:
-    ImageToXYZ();
+    ImageToXYZ(const QString &n);
     bool init();
 
     void process();

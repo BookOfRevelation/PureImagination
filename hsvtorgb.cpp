@@ -6,8 +6,8 @@
 #include "pureimage.h"
 
 
-HsvToRgb::HsvToRgb()
-    : PureFilter(), sequence(false), targetDir("")
+HsvToRgb::HsvToRgb(const QString &n)
+    : PureFilter(n), sequence(false), targetDir("")
 {
 }
 

@@ -10,7 +10,7 @@
 class WavLoader : public PureLoader
 {
 public:
-    WavLoader();
+    WavLoader(const QString &n);
 
     PureCore::PureType getOutputType()
     {

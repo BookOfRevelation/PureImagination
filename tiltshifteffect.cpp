@@ -3,8 +3,8 @@
 #include <QGraphicsBlurEffect>
 #include <QDebug>
 
-TiltShiftEffect::TiltShiftEffect()
-    : PureFilter()
+TiltShiftEffect::TiltShiftEffect(const QString &n)
+    : PureFilter(n)
 {
 }
 

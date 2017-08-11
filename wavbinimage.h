@@ -31,7 +31,7 @@ public slots:
 class WavBinImage  : public PureTransformater
 {
 public:
-    WavBinImage();
+    WavBinImage(const QString &n);
     bool init();
 
     void process();

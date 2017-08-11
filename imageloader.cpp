@@ -3,8 +3,8 @@
 #include "pureimage.h"
 #include <QDebug>
 
-ImageLoader::ImageLoader()
-    : PureLoader()
+ImageLoader::ImageLoader(const QString &n)
+    : PureLoader(n)
 {
     filePaths.clear();
 }

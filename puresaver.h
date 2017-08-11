@@ -5,7 +5,7 @@
 class PureSaver : public PureEffect
 {
 public:
-    PureSaver();
+    PureSaver(const QString& n);
 
     virtual PureCore::PureNature getNature();
     virtual PureCore::PureType getOutputType();

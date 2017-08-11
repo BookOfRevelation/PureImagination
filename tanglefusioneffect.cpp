@@ -5,8 +5,8 @@
 #include <QBoxLayout>
 #include <QTime>
 
-TangleFusionEffect::TangleFusionEffect()
-    : PureFilter(),fileName("")
+TangleFusionEffect::TangleFusionEffect(const QString &n)
+    : PureFilter(n),fileName("")
 {
 
 }

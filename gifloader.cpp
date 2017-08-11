@@ -3,8 +3,8 @@
 #include "pureimage.h"
 #include <QMovie>
 
-GifLoader::GifLoader()
-    : PureLoader()
+GifLoader::GifLoader(const QString &n)
+    : PureLoader(n)
 {
     filePath = "";
     images.clear();

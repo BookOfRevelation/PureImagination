@@ -37,7 +37,7 @@ private:
 class GradiantThresholdingEffect : public PureFilter
 {
 public:
-    GradiantThresholdingEffect();
+    GradiantThresholdingEffect(const QString &n);
     virtual ~GradiantThresholdingEffect();
 
     bool init();

@@ -16,7 +16,7 @@ signals:
     void makeProgress(int cur, int max);
 
 public:
-    PureEffect();
+    PureEffect(const QString& n);
     virtual ~PureEffect();
 
     virtual bool init() = 0;
@@ -33,6 +33,8 @@ public:
     virtual QPair<QString, QString> getInfo() = 0;
 
     bool binded;
+
+    QString name;
 
 };
 

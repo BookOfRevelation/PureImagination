@@ -1,7 +1,7 @@
 #include "puresaver.h"
 
-PureSaver::PureSaver()
-    : PureEffect()
+PureSaver::PureSaver(const QString &n)
+    : PureEffect(n)
 {
 
 }

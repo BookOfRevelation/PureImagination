@@ -5,8 +5,8 @@
 #include <QTime>
 #include "pureimage.h"
 
-MeltEffect::MeltEffect()
-    : PureFilter(), fileName("")
+MeltEffect::MeltEffect(const QString &n)
+    : PureFilter(n), fileName("")
 {
 
 }

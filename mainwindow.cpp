@@ -40,8 +40,8 @@ MainWindow::MainWindow(QWidget *parent) :
     setMouseTracking(true);
 
     QToolBar* tb = this->addToolBar("");
-    tb->addAction("Run", this, MainWindow::run);
-    tb->addAction("New", this, MainWindow::clear);
+    tb->addAction(QIcon(":/res/runicon.png"), "Run", this, MainWindow::run);
+    tb->addAction(QIcon(":/res/newicon.png"), "New", this, MainWindow::clear);
 
     currentEffect = nullptr;
     statusbar = new QStatusBar;
@@ -165,32 +165,32 @@ MainWindow::MainWindow(QWidget *parent) :
         while (QTime::currentTime() < dieTime)
             QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 
-        addEffect(new GemPuzzleEffect(), "GemPuzzle");
-        addEffect(new ModuloPushEffect(), "ModuloPush");
+        addEffect(new GemPuzzleEffect("GemPuzzle"));
+        addEffect(new ModuloPushEffect("ModuloPush"));
         //addEffect(new ImageToXYZ(), "ImageToXYZ");
-        addEffect(new GhostFusionEffect(), "GhostFusion");
-        addEffect(new RetriggerEffect(), "Retrigger");
-        addEffect(new VisualCrushEffect(), "VisualCrush");
-        addEffect(new VisualDownSamplingEffect(), "DownSampling");
+        addEffect(new GhostFusionEffect( "GhostFusion"));
+        addEffect(new RetriggerEffect("Retrigger") );
+        addEffect(new VisualCrushEffect("VisualCrush") );
+        addEffect(new VisualDownSamplingEffect("DownSampling") );
         //addEffect(new GradiantThresholdingEffect(), "GradiantThresholdin");
         //addEffect(new VaporSkyEffect(), "VaporSky");
         //addEffect(new TangleFusionEffect(), "TangleFusion");
-        addEffect(new NoizifierEffect(), "Noizifier");
-        addEffect(new RgbToHsv(), "RgbToHsv");
-        addEffect(new HsvToRgb(), "HsvToRgb");
-        addEffect(new OldVcrEffect(), "OldVcr");
-        addEffect(new ImageLoader(), "Images");
-        addEffect(new ImageSaver(), "Images");
-        addEffect(new SymbioticMessEffect(), "SymbioticMess");
-        addEffect(new AnaglyphEffect(), "Anaglyph");
+        addEffect(new NoizifierEffect("Noizifier") );
+        addEffect(new RgbToHsv("RgbToHsv") );
+        addEffect(new HsvToRgb("HsvToRgb") );
+        addEffect(new OldVcrEffect("OldVcr") );
+        addEffect(new ImageLoader("Images") );
+        addEffect(new ImageSaver("Images"));
+        addEffect(new SymbioticMessEffect("SymbioticMess"));
+        addEffect(new AnaglyphEffect("Anaglyph") );
         //addEffect(new TiltShiftEffect(), "TiltShifting");
-        addEffect(new WavLoader(), "Wave");
-        addEffect(new WavBinImage(), "Wave binary Image");
-        addEffect(new MeltEffect(), "MeltEffect");
-        addEffect(new CompositionEffect(), "Composition");
-        addEffect(new GifLoader(), "Animated Gif");
-        addEffect(new GifSaver(), "Animateg Gif");
-        addEffect(new SubliminalEffect, "Subliminal Effect");
+        addEffect(new WavLoader("Wave") );
+        addEffect(new WavBinImage("Wave binary Image") );
+        addEffect(new MeltEffect("MeltEffect") );
+        addEffect(new CompositionEffect("Composition") );
+        addEffect(new GifLoader("Animated Gif") );
+        addEffect(new GifSaver("Animateg Gif") );
+        addEffect(new SubliminalEffect("Subliminal Effect"));
 
 
         pbar = new QProgressBar;
@@ -218,8 +218,9 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::addEffect(PureEffect *e, const QString &name)
+void MainWindow::addEffect(PureEffect *e)
 {
+    QString name = e->name;
     PureCore::PureNature nat = e->getNature();
     QTreeWidgetItem* father = nullptr;
     switch(nat)

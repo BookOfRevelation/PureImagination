@@ -11,7 +11,7 @@
 class HsvToRgb : public PureFilter
 {
 public:
-    HsvToRgb();
+    HsvToRgb(const QString &n);
     virtual ~HsvToRgb();
 
     bool init();

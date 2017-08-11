@@ -24,7 +24,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    void addEffect(PureEffect* e, const QString &name);
+    void addEffect(PureEffect* e);
 
 public slots:
     void makeProgress(int cur, int max);

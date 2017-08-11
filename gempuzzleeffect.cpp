@@ -5,8 +5,8 @@
 #include <QTime>
 #include "pureimage.h"
 
-GemPuzzleEffect::GemPuzzleEffect()
-    : PureFilter()
+GemPuzzleEffect::GemPuzzleEffect(const QString &n)
+    : PureFilter(n)
 {
     gemwidget = new GemWidget();
 }

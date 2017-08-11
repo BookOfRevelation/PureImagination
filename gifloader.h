@@ -9,7 +9,7 @@
 class GifLoader : public PureLoader
 {
 public:
-    GifLoader();
+    GifLoader(const QString &n);
 
     PureCore::PureType getOutputType();
 

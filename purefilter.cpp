@@ -1,7 +1,7 @@
 #include "purefilter.h"
 
-PureFilter::PureFilter()
-    : PureEffect()
+PureFilter::PureFilter(const QString& n)
+    : PureEffect(n)
 {
 
 }

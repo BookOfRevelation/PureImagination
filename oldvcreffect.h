@@ -34,7 +34,7 @@ private:
 class OldVcrEffect  : public PureFilter
 {
 public:
-    OldVcrEffect();
+    OldVcrEffect(const QString &n);
     virtual ~OldVcrEffect();
 
     bool init();

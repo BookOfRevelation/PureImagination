@@ -31,7 +31,7 @@ private:
 class SymbioticMessEffect  : public PureFilter
 {
 public:
-    SymbioticMessEffect();
+    SymbioticMessEffect(const QString &n);
     virtual ~SymbioticMessEffect();
     bool init();
     void process();

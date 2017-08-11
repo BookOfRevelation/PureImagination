@@ -7,8 +7,8 @@
 #include <QDialog>
 #include "pureimage.h"
 
-AnaglyphEffect::AnaglyphEffect():
-    PureFilter()
+AnaglyphEffect::AnaglyphEffect(const QString &n):
+    PureFilter(n)
 {
     gemwidget = new AnaglyphWidget;
 }

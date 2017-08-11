@@ -1,7 +1,7 @@
 #include "pureloader.h"
 
-PureLoader::PureLoader()
-    : PureEffect()
+PureLoader::PureLoader(const QString & n)
+    : PureEffect(n)
 {
 
 }

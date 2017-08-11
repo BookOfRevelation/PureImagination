@@ -7,8 +7,8 @@
 #include <QtMath>
 #include "pureimage.h"
 #include <QVector3D>
-CompositionEffect::CompositionEffect()
-    : PureFilter()
+CompositionEffect::CompositionEffect(const QString &n)
+    : PureFilter(n)
 {
     widget = new CompositionWidget;
 }

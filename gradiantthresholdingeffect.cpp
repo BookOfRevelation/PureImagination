@@ -6,8 +6,8 @@
 #include <QBoxLayout>
 #include <QTime>
 
-GradiantThresholdingEffect::GradiantThresholdingEffect()
-    : PureFilter(), sequence(false), targetDir("")
+GradiantThresholdingEffect::GradiantThresholdingEffect(const QString &n)
+    : PureFilter(n), sequence(false), targetDir("")
 {
     gemwidget = new GradiantThresholdingWidget(this);
 }

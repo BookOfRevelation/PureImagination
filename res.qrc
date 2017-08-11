@@ -20,5 +20,7 @@
         <file>effects/filter-img-e.png</file>
         <file>effects/loader-img-e.png</file>
         <file>effects/saver-img-e.png</file>
+        <file>newicon.png</file>
+        <file>runicon.png</file>
     </qresource>
 </RCC>

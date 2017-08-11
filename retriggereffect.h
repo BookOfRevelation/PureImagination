@@ -79,7 +79,7 @@ private:
 class RetriggerEffect : public PureFilter
 {
 public:
-    RetriggerEffect();
+    RetriggerEffect(const QString &n);
     virtual ~RetriggerEffect();
 
     bool init();

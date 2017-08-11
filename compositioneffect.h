@@ -37,7 +37,7 @@ private:
 class CompositionEffect : public PureFilter
 {
 public:
-    CompositionEffect();
+    CompositionEffect(const QString &n);
 
     bool init();
 

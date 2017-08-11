@@ -5,8 +5,8 @@
 #include <QTime>
 #include "pureimage.h"
 
-VisualCrushEffect::VisualCrushEffect()
-    : PureFilter()
+VisualCrushEffect::VisualCrushEffect(const QString &n)
+    : PureFilter(n)
 {
     gemwidget = new VisualCrushWidget();
 }

@@ -7,8 +7,8 @@
 #include <QDir>
 #include <QtMath>
 
-ImageToXYZ::ImageToXYZ()
-    : PureTransformater(),splitFactor(1.05)
+ImageToXYZ::ImageToXYZ(const QString &n)
+    : PureTransformater(n),splitFactor(1.05)
 {
 
 }

@@ -46,7 +46,7 @@ private:
 class GemPuzzleEffect : public PureFilter
 {
 public:
-    GemPuzzleEffect();
+    GemPuzzleEffect(const QString &n);
     virtual ~GemPuzzleEffect();
 
     bool init();

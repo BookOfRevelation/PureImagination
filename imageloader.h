@@ -8,7 +8,7 @@
 class ImageLoader : public PureLoader
 {
 public:
-    ImageLoader();
+    ImageLoader(const QString &n);
 
     PureCore::PureType getOutputType();
 

@@ -1,7 +1,7 @@
 #include "puretransformater.h"
 
-PureTransformater::PureTransformater()
-    : PureEffect()
+PureTransformater::PureTransformater(const QString &n)
+    : PureEffect(n)
 {
 
 }

@@ -42,7 +42,7 @@ private:
 class SubliminalEffect : public PureFilter
 {
 public:
-    SubliminalEffect();
+    SubliminalEffect(const QString &n);
     bool init();
 
     void process();

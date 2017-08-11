@@ -5,7 +5,7 @@
 class TiltShiftEffect : public PureFilter
 {
 public:
-    TiltShiftEffect();
+    TiltShiftEffect(const QString &n);
     virtual ~TiltShiftEffect();
 
     bool init();

@@ -4,8 +4,8 @@
 #include <QBoxLayout>
 #include <QTime>
 
-VisualDownSamplingEffect::VisualDownSamplingEffect()
-    : PureFilter()
+VisualDownSamplingEffect::VisualDownSamplingEffect(const QString &n)
+    : PureFilter(n)
 {
     gemwidget = new VisualDownSamplingWidget();
 }

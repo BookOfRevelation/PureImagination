@@ -6,7 +6,7 @@
 class PureTransformater : public PureEffect
 {
 public:
-    PureTransformater();
+    PureTransformater(const QString& n);
 
     virtual PureCore::PureNature getNature();
 };

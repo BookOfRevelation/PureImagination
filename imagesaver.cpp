@@ -3,7 +3,8 @@
 #include <QFileDialog>
 #include <QDebug>
 
-ImageSaver::ImageSaver()
+ImageSaver::ImageSaver(const QString &n)
+    : PureSaver(n)
 {
     targetPath = "";
 }

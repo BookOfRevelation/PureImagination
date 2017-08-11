@@ -1,9 +1,10 @@
 #include "pureeffect.h"
 
-PureEffect::PureEffect()
+PureEffect::PureEffect(const QString& n)
     : QObject()
 {
     binded = false;
+    name = n;
 }
 
 PureEffect::~PureEffect()

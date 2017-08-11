@@ -6,8 +6,8 @@
 #include <QTime>
 #include "pureimage.h"
 
-ModuloPushEffect::ModuloPushEffect()
-    : PureFilter(),sequence(false), targetDir("")
+ModuloPushEffect::ModuloPushEffect(const QString &n)
+    : PureFilter(n),sequence(false), targetDir("")
 {
     gemwidget = new ModuloPushWidget(this);
 

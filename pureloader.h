@@ -6,7 +6,7 @@
 class PureLoader : public PureEffect
 {
 public:
-    PureLoader();
+    PureLoader(const QString& n);
 
     virtual PureCore::PureNature getNature();
 

@@ -3,8 +3,8 @@
 #include "pureaudio.h"
 #include <QDebug>
 
-WavLoader::WavLoader()
-    : PureLoader()
+WavLoader::WavLoader(const QString &n)
+    : PureLoader(n)
 {
     filePath = "";
 }

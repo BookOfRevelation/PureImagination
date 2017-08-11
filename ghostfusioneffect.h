@@ -8,7 +8,7 @@
 class GhostFusionEffect : public PureFilter
 {
 public:
-    GhostFusionEffect();
+    GhostFusionEffect(const QString &n);
     bool init();
 
     void process();
