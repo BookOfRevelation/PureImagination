@@ -2,6 +2,8 @@
 
 #include <QWheelEvent>
 #include <QScrollBar>
+#include <QFileDialog>
+
 PureView::PureView()
     : QGraphicsView()
 {
@@ -65,4 +67,22 @@ void PureView::mouseMoveEvent(QMouseEvent *event)
         this->centerOn(x,y);
 
     }
+}
+
+
+void PureView::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    QGraphicsView::mouseDoubleClickEvent(event);
+
+    if(event->button() == Qt::LeftButton)
+    {
+        QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                          "/home",
+                                                          tr("Images (*.png *.xpm *.jpg *.gif)"));
+        if(fileName != "")
+        {
+            this->setStyleSheet(QString("background-image: url(%1);").arg(fileName));
+        }
+    }
+
 }
