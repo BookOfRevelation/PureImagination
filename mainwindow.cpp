@@ -45,11 +45,15 @@ MainWindow::MainWindow(QWidget *parent) :
     setMouseTracking(true);
 
     QToolBar* tb = this->addToolBar("");
-    tb->addAction(QIcon(":/res/runicon.png"), "Run", this, MainWindow::run);
-    tb->addAction(QIcon(":/res/newicon.png"), "New", this, MainWindow::clear);
+    QAction* newAct = tb->addAction(QIcon(":/res/runicon.png"), "Run", this, MainWindow::run);
+    newAct->setShortcut(QKeySequence(tr("Ctrl+R")));
+    QAction* clearAct = tb->addAction(QIcon(":/res/newicon.png"), "New", this, MainWindow::clear);
+    clearAct->setShortcut(QKeySequence::New);
 
     QAction* undoAct = undoStack->createUndoAction(tb);
+    undoAct->setShortcut(QKeySequence::Undo);
     QAction* redoAct = undoStack->createRedoAction(tb);
+    redoAct->setShortcut(QKeySequence::Redo);
     undoAct->setIcon(QIcon(":/res/undoicon.png"));
     redoAct->setIcon(QIcon(":/res/redoicon.png"));
     tb->addActions(QList<QAction*>{undoAct, redoAct});
