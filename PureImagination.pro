@@ -58,7 +58,9 @@ SOURCES += main.cpp\
     gifloader.cpp \
     gifsaver.cpp \
     subliminaleffect.cpp \
-    pureconfiguration.cpp
+    pureconfiguration.cpp \
+    purecommand.cpp \
+    commandparameters.cpp
 
 HEADERS  += mainwindow.h \
     gempuzzleeffect.h \
@@ -106,7 +108,9 @@ HEADERS  += mainwindow.h \
     gif.h \
     gifsaver.h \
     subliminaleffect.h \
-    pureconfiguration.h
+    pureconfiguration.h \
+    purecommand.h \
+    commandparameters.h
 
 FORMS    +=
 

@@ -7,7 +7,7 @@
 
 
 HsvToRgb::HsvToRgb(const QString &n)
-    : PureFilter(n), sequence(false), targetDir("")
+    : PureFilter(n)
 {
 }
 
@@ -50,6 +50,18 @@ void HsvToRgb::process()
     }
 }
 
+QVector<QVariant> HsvToRgb::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    return res;
+}
+
+void HsvToRgb::setParameters(QVector<QVariant> p)
+{
+    Q_UNUSED(p);
+}
 
 QWidget* HsvToRgb::getParamWidget()
 {

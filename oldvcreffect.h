@@ -15,6 +15,12 @@ class OldVcrWidget : public QDialog
 public:
     OldVcrWidget();
 
+    void updateUI()
+    {
+        rateSS->setValue(rate);
+        bwSS->setValue(bw);
+    }
+
 //PARAMETERS
     int rate;
     int bw;
@@ -40,6 +46,9 @@ public:
     bool init();
 
     void process();
+
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
     QWidget* getParamWidget();
 

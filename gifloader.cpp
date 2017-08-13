@@ -7,7 +7,6 @@ GifLoader::GifLoader(const QString &n)
     : PureLoader(n)
 {
     filePath = "";
-    images.clear();
 
 }
 
@@ -51,4 +50,17 @@ void GifLoader::process()
 
     PureCore::currentData = imgs;
 
+}
+
+QVector<QVariant> GifLoader::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+    res.push_back(QVariant(filePath));
+    return res;
+}
+
+void GifLoader::setParameters(QVector<QVariant> p)
+{
+    filePath = p[0].toString();
 }

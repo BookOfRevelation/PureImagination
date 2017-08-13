@@ -71,8 +71,25 @@ void MeltEffect::process()
 
             }
 
-
         }
     }
 
+}
+
+QVector<QVariant> MeltEffect::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    QVariant img;
+    img.setValue(melting);
+
+    res.push_back(img);
+
+    return res;
+}
+
+void MeltEffect::setParameters(QVector<QVariant> p)
+{
+    melting = p[0].value<QImage>();
 }

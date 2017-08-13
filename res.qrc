@@ -22,5 +22,7 @@
         <file>effects/saver-img-e.png</file>
         <file>newicon.png</file>
         <file>runicon.png</file>
+        <file>redoicon.png</file>
+        <file>undoicon.png</file>
     </qresource>
 </RCC>

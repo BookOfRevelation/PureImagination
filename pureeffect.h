@@ -25,6 +25,9 @@ public:
     virtual DataWidget* getDataWidget();
     virtual QWidget* getParamWidget();
 
+    virtual void setParameters(QVector<QVariant> p) = 0;
+    virtual QVector<QVariant> getParameters() const = 0;
+
     virtual PureCore::PureType getOutputType() = 0;
     virtual PureCore::PureType getInputType() = 0;
 

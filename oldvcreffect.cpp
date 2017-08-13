@@ -142,6 +142,24 @@ QWidget* OldVcrEffect::getParamWidget()
     return gemwidget;
 }
 
+QVector<QVariant> OldVcrEffect::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(QVariant(gemwidget->rate));
+    res.push_back(QVariant(gemwidget->bw));
+
+    return res;
+}
+
+void OldVcrEffect::setParameters(QVector<QVariant> p)
+{
+    gemwidget->rate = p[0].toInt();
+    gemwidget->bw = p[1].toInt();
+
+    gemwidget->updateUI();
+}
 
 OldVcrWidget::OldVcrWidget()
     : QDialog()

@@ -16,6 +16,13 @@ class SubliminalWidget : public QDialog
 public:
     SubliminalWidget();
 
+    void updateUI()
+    {
+        fsSS->setValue(frameSkip);
+        subSS->setValue(subDuration);
+        repeatSeq->setChecked(repeat);
+    }
+
 //PARAMETERS
     int frameSkip;
     int subDuration;
@@ -47,6 +54,8 @@ public:
 
     void process();
 
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
     PureCore::PureType getOutputType() { return PureCore::Image ;}
     PureCore::PureType getInputType()  { return PureCore::Image ;}

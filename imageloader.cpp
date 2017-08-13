@@ -51,3 +51,18 @@ void ImageLoader::process()
     PureCore::currentData = imgs;
 
 }
+
+QVector<QVariant> ImageLoader::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(QVariant(filePaths));
+
+    return res;
+}
+
+void ImageLoader::setParameters(QVector<QVariant> p)
+{
+   filePaths = p[0].toStringList();
+}

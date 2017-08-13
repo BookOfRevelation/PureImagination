@@ -4,6 +4,7 @@
 #include <QVector>
 #include <QPair>
 #include <QImage>
+#include <QVariant>
 
 class ImageLoader : public PureLoader
 {
@@ -14,6 +15,9 @@ public:
 
     bool init();
     void process();
+
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
     QPair<QString, QString> getInfo()
     {
@@ -27,9 +31,7 @@ public:
     }
 
 private:
-
     QStringList filePaths;
-    QVector<QPair<QImage, QString>> images;
 };
 
 #endif // IMAGELOADER_H

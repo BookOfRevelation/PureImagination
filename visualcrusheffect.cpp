@@ -76,6 +76,25 @@ QWidget* VisualCrushEffect::getParamWidget()
 }
 
 
+
+QVector<QVariant> VisualCrushEffect::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(QVariant(gemwidget->rate));
+
+    return res;
+}
+
+
+void VisualCrushEffect::setParameters(QVector<QVariant> p)
+{
+    gemwidget->rate = p[0].toInt();
+
+    gemwidget->update();
+}
+
 VisualCrushWidget::VisualCrushWidget()
     : QDialog()
 {

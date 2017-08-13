@@ -80,6 +80,29 @@ QWidget* ModuloPushEffect::getParamWidget()
     return gemwidget;
 }
 
+QVector<QVariant> ModuloPushEffect::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(QVariant(gemwidget->minH));
+    res.push_back(QVariant(gemwidget->maxH));
+    res.push_back(QVariant(gemwidget->minW));
+    res.push_back(QVariant(gemwidget->maxW));
+
+    return res;
+}
+
+void ModuloPushEffect::setParameters(QVector<QVariant> p)
+{
+    gemwidget->minH = p[0].toInt();
+    gemwidget->maxH = p[1].toInt();
+    gemwidget->minW = p[2].toInt();
+    gemwidget->maxW = p[3].toInt();
+
+    gemwidget->updateUI();
+}
+
 
 ModuloPushWidget::ModuloPushWidget(ModuloPushEffect* effect)
     : QDialog(), burgle(effect)

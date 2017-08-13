@@ -15,6 +15,11 @@ class GradiantThresholdingWidget : public QWidget
 public:
     GradiantThresholdingWidget(GradiantThresholdingEffect* effect);
 
+    void updateUI()
+    {
+        seuilSS->setValue(seuil);
+    }
+
 //PARAMETERS
     int seuil;
 
@@ -43,6 +48,9 @@ public:
     bool init();
 
     void process();
+
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
     QWidget* getParamWidget();
 

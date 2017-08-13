@@ -57,3 +57,17 @@ QWidget* RgbToHsv::getParamWidget()
     return nullptr;
 }
 
+
+QVector<QVariant> RgbToHsv::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+
+    return res;
+}
+
+void RgbToHsv::setParameters(QVector<QVariant> p)
+{
+    Q_UNUSED(p);
+}

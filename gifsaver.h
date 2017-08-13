@@ -1,6 +1,7 @@
 #ifndef GIFSAVER_H
 #define GIFSAVER_H
 #include "puresaver.h"
+#include <QVariant>
 
 class GifSaver : public PureSaver
 {
@@ -22,6 +23,9 @@ public:
                     "du disque dur."
                     );
     }
+
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
 private:
     QString targetPath;

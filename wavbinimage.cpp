@@ -86,3 +86,20 @@ void WavBinImage::process()
     PureCore::currentData = newData;
 
 }
+
+QVector<QVariant> WavBinImage::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(QVariant(w->size));
+
+    return res;
+}
+
+void WavBinImage::setParameters(QVector<QVariant> p)
+{
+    w->size = p[0].toInt();
+
+    w->updateUI();
+}

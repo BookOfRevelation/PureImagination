@@ -14,6 +14,9 @@ public:
 
     void process();
 
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
+
     PureCore::PureType getOutputType() { return PureCore::Image ;}
     PureCore::PureType getInputType()  { return PureCore::Image ;}
 
@@ -30,7 +33,6 @@ public:
 private:
 
     QString fileName;
-    QVector<QImage> baseImages;
 
     QImage melting;
 

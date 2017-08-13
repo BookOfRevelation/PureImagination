@@ -119,6 +119,25 @@ QWidget* SymbioticMessEffect::getParamWidget()
     return gemwidget;
 }
 
+QVector<QVariant> SymbioticMessEffect::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(QVariant(gemwidget->rate));
+    res.push_back(QVariant(gemwidget->chance));
+
+    return res;
+}
+
+void SymbioticMessEffect::setParameters(QVector<QVariant> p)
+{
+    gemwidget->rate = p[0].toInt();
+    gemwidget->chance = p[1].toInt();
+
+    gemwidget->updateUI();
+
+}
 
 SymbioticMessWidget::SymbioticMessWidget()
     : QDialog()

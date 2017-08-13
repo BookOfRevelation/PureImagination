@@ -7,6 +7,7 @@
 #include "slidespiner.h"
 #include <QLayout>
 #include <QPushButton>
+#include <QVariant>
 
 class WavBinWidget : public QDialog
 {
@@ -19,6 +20,10 @@ public:
     QPushButton* ok;
     QBoxLayout* mainLt;
 
+    void updateUI()
+    {
+        sizeSd->setValue(size);
+    }
 
     int size;
 
@@ -35,6 +40,10 @@ public:
     bool init();
 
     void process();
+
+
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
     PureCore::PureType getOutputType() { return PureCore::Image ;}
     PureCore::PureType getInputType()  { return PureCore::Wave ;}

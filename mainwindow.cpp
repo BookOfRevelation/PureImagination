@@ -26,6 +26,7 @@
 #include "melteffect.h"
 #include "subliminaleffect.h"
 #include "gifsaver.h"
+#include "purecommand.h"
 #include <QSplashScreen>
 #include <QSound>
 #include <QCoreApplication>
@@ -38,11 +39,26 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
 
+    undoStack = new QUndoStack(this);
+
+
     setMouseTracking(true);
 
     QToolBar* tb = this->addToolBar("");
     tb->addAction(QIcon(":/res/runicon.png"), "Run", this, MainWindow::run);
     tb->addAction(QIcon(":/res/newicon.png"), "New", this, MainWindow::clear);
+
+    QAction* undoAct = undoStack->createUndoAction(tb);
+    QAction* redoAct = undoStack->createRedoAction(tb);
+    undoAct->setIcon(QIcon(":/res/undoicon.png"));
+    redoAct->setIcon(QIcon(":/res/redoicon.png"));
+    tb->addActions(QList<QAction*>{undoAct, redoAct});
+
+    connect(undoAct, &QAction::triggered, this, &MainWindow::updateEnabledEffects);
+    connect(redoAct, &QAction::triggered, this, &MainWindow::updateEnabledEffects);
+
+
+
 
     currentEffect = nullptr;
     statusbar = new QStatusBar;
@@ -294,8 +310,13 @@ void MainWindow::activeEffect(bool active)
 
 void MainWindow::showEffect(PureEffect *e)
 {
-    scene->addEffect(e);
-    currentEffect = e;
+    CommandParameters* cmd = new CommandParameters();
+    cmd->effect = e;
+    cmd->scene = scene;
+    cmd->currentEffect = currentEffect;
+
+    //will automatically call PureCommand::redo()
+    undoStack->push(new PureCommand(cmd, undoStack));
 }
 
 void MainWindow::run()
@@ -390,6 +411,11 @@ void MainWindow::clear()
         }
         PureCore::currentOutput = PureCore::NoType;
         scene->clean();
+
+        for(int i = 0 ; i < undoStack->count() ; ++i)
+        {
+            undoStack->clear();
+        }
 
         updateEnabledEffects();
     }

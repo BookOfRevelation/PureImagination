@@ -58,3 +58,14 @@ void GhostFusionEffect::process()
     data->addImage(newImage, name);
 
 }
+
+
+void GhostFusionEffect::setParameters(QVector<QVariant> p)
+{
+    Q_UNUSED(p);
+}
+
+QVector<QVariant> GhostFusionEffect::getParameters() const
+{
+    return QVector<QVariant>();
+}

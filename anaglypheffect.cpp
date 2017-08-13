@@ -166,6 +166,31 @@ QWidget* AnaglyphEffect::getParamWidget()
     return gemwidget;
 }
 
+QVector<QVariant> AnaglyphEffect::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+    res.push_back(QVariant(gemwidget->rx));
+    res.push_back(QVariant(gemwidget->ry));
+    res.push_back(QVariant(gemwidget->gx));
+    res.push_back(QVariant(gemwidget->gy));
+    res.push_back(QVariant(gemwidget->bx));
+    res.push_back(QVariant(gemwidget->by));
+    return res;
+}
+
+void AnaglyphEffect::setParameters(QVector<QVariant> p)
+{
+    gemwidget->rx = p[0].toInt();
+    gemwidget->ry = p[1].toInt();
+    gemwidget->gx = p[2].toInt();
+    gemwidget->gy = p[3].toInt();
+    gemwidget->bx = p[4].toInt();
+    gemwidget->by = p[5].toInt();
+
+    gemwidget->updateUI();
+}
+
 
 AnaglyphWidget::AnaglyphWidget()
     : QDialog()

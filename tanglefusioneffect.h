@@ -14,6 +14,8 @@ public:
 
     void process();
 
+
+
     PureCore::PureType getOutputType() { return PureCore::Image ;}
     PureCore::PureType getInputType()  { return PureCore::Image ;}
 

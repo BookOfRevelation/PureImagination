@@ -20,6 +20,10 @@ public:
     bool init();
     void process();
 
+
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
+
     QPair<QString, QString> getInfo()
     {
        return  QPair<QString, QString>(

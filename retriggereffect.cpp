@@ -90,6 +90,44 @@ QWidget* RetriggerEffect::getParamWidget()
 }
 
 
+QVector<QVariant> RetriggerEffect::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(gemwidget->minH);
+    res.push_back(gemwidget->maxH);
+    res.push_back(gemwidget->minW);
+    res.push_back(gemwidget->maxW);
+    res.push_back(gemwidget->minOffsetH);
+    res.push_back(gemwidget->maxOffsetH);
+    res.push_back(gemwidget->minOffsetW);
+    res.push_back(gemwidget->maxOffsetW);
+    res.push_back(gemwidget->repeatMin);
+    res.push_back(gemwidget->repeatMax);
+    res.push_back(gemwidget->numberMin);
+    res.push_back(gemwidget->numberMax);
+
+    return res;
+}
+
+void RetriggerEffect::setParameters(QVector<QVariant> p)
+{
+    gemwidget->minH = p[0].toInt();
+    gemwidget->maxH = p[1].toInt();
+    gemwidget->minW = p[2].toInt();
+    gemwidget->maxW = p[3].toInt();
+    gemwidget->minOffsetH = p[4].toInt();
+    gemwidget->maxOffsetH = p[5].toInt();
+    gemwidget->minOffsetW = p[6].toInt();
+    gemwidget->maxOffsetW = p[7].toInt();
+    gemwidget->repeatMin = p[8].toInt();
+    gemwidget->repeatMax = p[9].toInt();
+    gemwidget->numberMin = p[10].toInt();
+    gemwidget->numberMax = p[11].toInt();
+
+    gemwidget->updateUI();
+}
 
 
 

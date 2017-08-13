@@ -1,6 +1,7 @@
 #ifndef IMAGESAVER_H
 #define IMAGESAVER_H
 #include "puresaver.h"
+#include <QVariant>
 
 class ImageSaver : public PureSaver
 {
@@ -11,6 +12,9 @@ public:
 
     bool init();
     void process();
+
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
     QPair<QString, QString> getInfo()
     {

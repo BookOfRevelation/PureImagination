@@ -111,6 +111,42 @@ void SubliminalEffect::process()
     }
 }
 
+QVector<QVariant> SubliminalEffect::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(QVariant(widget->frameSkip));
+    res.push_back(QVariant(widget->subDuration));
+    res.push_back(QVariant(widget->repeat));
+
+    res.push_back(widget->subImages.count());
+
+    for(int i = 0 ; i < widget->subImages.count(); ++i)
+    {
+        res.push_back(widget->subImages[i]);
+    }
+
+    return res;
+}
+
+void SubliminalEffect::setParameters(QVector<QVariant> p)
+{
+    widget->frameSkip = p[0].toInt();
+    widget->subDuration = p[1].toInt();
+    widget->repeat = p[2].toBool();
+
+    int imgCount = p[3].toInt();
+    widget->subImages.clear();
+    for(int i = 0 ; i < imgCount; ++i)
+    {
+        widget->subImages.push_back(p[4+i].value<QImage>());
+    }
+
+    widget->updateUI();
+
+}
+
 SubliminalWidget::SubliminalWidget()
     : QDialog()
 {

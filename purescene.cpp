@@ -83,9 +83,35 @@ void PureScene::addEffect(PureEffect *e)
         {
            e->effect->init();
         });
-        eitems.push_back(QPair<EffectGraphicsItem*, PureEffect*>(pitem, e));
+        eitems.push_back(QPair<QPair<EffectGraphicsItem*, QGraphicsTextItem*>, PureEffect*>(QPair<EffectGraphicsItem*, QGraphicsTextItem*>(pitem, tit), e));
 
 
+}
+
+void PureScene::removeEffect(PureEffect *e)
+{
+    bool notFound = true;
+    for(int i = 0 ; i < eitems.count() && notFound; ++i)
+    {
+        QGraphicsItem* it = nullptr;
+        QGraphicsTextItem* tit = nullptr;
+        if(eitems[i].second == e)
+        {
+            it = eitems[i].first.first;
+            tit = eitems[i].first.second;
+            eitems.remove(i);
+
+            this->removeItem(it);
+            this->removeItem(tit);
+            QGraphicsPixmapItem* pit = static_cast<QGraphicsPixmapItem*>(it);
+            curWidth = curWidth - marginRight - pit->pixmap().width();
+
+            delete it;
+            delete tit;
+            notFound = false;
+        }
+
+    }
 }
 
 void PureScene::run()

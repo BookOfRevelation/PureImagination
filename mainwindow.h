@@ -10,6 +10,7 @@
 #include <QToolBar>
 #include <QTreeWidget>
 #include <QLineEdit>
+#include <QUndoStack>
 #include "pureeffect.h"
 #include "pureview.h"
 #include "purescene.h"
@@ -78,6 +79,8 @@ private:
     void activeEffect(bool active);
 
     PureEffect* currentEffect;
+
+    QUndoStack* undoStack;
 
     void updateEnabledEffects();
 };

@@ -16,6 +16,11 @@ class CompositionWidget : public QDialog
 public:
     CompositionWidget();
 
+    void updateUI()
+    {
+        pixelSS->setValue(pixelDim);
+    }
+
     //PARAMETERS
     int pixelDim;
     QVector<QImage> pixelImages;
@@ -43,6 +48,8 @@ public:
 
     void process();
 
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
     PureCore::PureType getOutputType() { return PureCore::Image ;}
     PureCore::PureType getInputType()  { return PureCore::Image ;}

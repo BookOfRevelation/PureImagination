@@ -15,6 +15,7 @@ public:
     PureScene();
 
     void addEffect(PureEffect* e);
+    void removeEffect(PureEffect* e);
 
     void run();
 
@@ -36,7 +37,7 @@ signals:
 private:
 
     static constexpr int marginRight = 10;
-    QVector<QPair<EffectGraphicsItem*, PureEffect*>> eitems;
+    QVector<QPair<QPair<EffectGraphicsItem*, QGraphicsTextItem*>, PureEffect*>> eitems;
 
     QGraphicsItem* hovered;
 

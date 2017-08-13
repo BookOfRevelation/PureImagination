@@ -65,6 +65,22 @@ QWidget* NoizifierEffect::getParamWidget()
     return gemwidget;
 }
 
+QVector<QVariant> NoizifierEffect::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(gemwidget->rate);
+
+    return res;
+}
+
+void NoizifierEffect::setParameters(QVector<QVariant> p)
+{
+    gemwidget->rate = p[0].toInt();
+
+    gemwidget->updateUI();
+}
 
 NoizifierWidget::NoizifierWidget(NoizifierEffect* effect)
     : QDialog(), burgle(effect)

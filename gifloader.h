@@ -4,7 +4,7 @@
 #include <QVector>
 #include <QPair>
 #include <QImage>
-
+#include <QVariant>
 
 class GifLoader : public PureLoader
 {
@@ -27,10 +27,12 @@ public:
                      );
     }
 
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
+
 private:
 
     QString filePath;
-    QVector<QPair<QImage, QString>> images;
 };
 
 #endif // GIFLOADER_H

@@ -14,6 +14,11 @@ class VisualCrushWidget : public QDialog
 public:
     VisualCrushWidget();
 
+    void updateUI()
+    {
+        rateSS->setValue(rate);
+    }
+
 //PARAMETERS
     int rate;
 public slots:
@@ -38,6 +43,10 @@ public:
     bool init();
 
     void process();
+
+
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
     QWidget* getParamWidget();
 

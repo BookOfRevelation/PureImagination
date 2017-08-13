@@ -41,3 +41,16 @@ void ImageSaver::process()
 
     }
 }
+
+QVector<QVariant> ImageSaver::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+    res.push_back(QVariant(targetPath));
+    return res;
+}
+
+void ImageSaver::setParameters(QVector<QVariant> p)
+{
+    targetPath = p[0].toString();
+}

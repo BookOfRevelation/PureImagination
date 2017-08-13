@@ -138,6 +138,37 @@ QImage CompositionEffect::neareastColor(QColor c1)
 
 }
 
+QVector<QVariant> CompositionEffect::getParameters() const
+{
+    QVector<QVariant> res;
+
+    res.push_back(widget->pixelDim);
+    res.push_back(widget->pixelImages.count());
+
+    for(int i = 0 ; i < widget->pixelImages.count() ; ++i)
+    {
+        QVariant img;
+        img.setValue(widget->pixelImages[i]);
+        res.push_back(img);
+    }
+
+    return res;
+}
+
+void CompositionEffect::setParameters(QVector<QVariant> p)
+{
+    widget->pixelImages.clear();
+    widget->pixelDim = p[0].toInt();
+
+    int imageCount = p[1].toInt();
+
+    for(int i = 0 ; i < imageCount ; ++i)
+    {
+        widget->pixelImages[i] = p[2+i].value<QImage>();
+    }
+
+    widget->updateUI();
+}
 
 CompositionWidget::CompositionWidget()
     : QDialog()

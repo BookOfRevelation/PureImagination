@@ -35,3 +35,19 @@ void WavLoader::process()
 
     PureCore::currentData = audio;
 }
+
+
+QVector<QVariant> WavLoader::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(QVariant(filePath));
+
+    return res;
+}
+
+void WavLoader::setParameters(QVector<QVariant> p)
+{
+    filePath = p[0].toString();
+}

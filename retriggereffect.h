@@ -14,6 +14,22 @@ class RetriggerWidget : public QDialog
 public:
     RetriggerWidget();
 
+    void updateUI()
+    {
+        minHSS->setValue(minH);
+        maxHSS->setValue(maxH);
+        minWSS->setValue(minW);
+        maxWSS->setValue(maxW);
+        offsetHmnSS->setValue(minOffsetH);
+        offsetHmxSS->setValue(maxOffsetH);
+        offsetWmnSS->setValue(minOffsetW);
+        offsetWmxSS->setValue(maxOffsetW);
+        minRptSS->setValue(repeatMin);
+        maxRptSS->setValue(repeatMax);
+        minNbSS->setValue(numberMin);
+        maxNbSS->setValue(numberMax);
+    }
+
 //PARAMETERS
     int minH;
     int maxH;
@@ -85,6 +101,9 @@ public:
     bool init();
 
     void process();
+
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
     QWidget* getParamWidget();
 

@@ -17,6 +17,13 @@ public:
 //PARAMETERS
     int rate;
     int chance;
+
+    void updateUI()
+    {
+        rateSS->setValue(rate);
+        chanceSS->setValue(chance);
+    }
+
 public slots:
     void onRateModified(double v);
     void onChanceModified(double v);
@@ -35,6 +42,10 @@ public:
     virtual ~SymbioticMessEffect();
     bool init();
     void process();
+
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
+
     QWidget* getParamWidget();
     PureCore::PureType getOutputType() { return PureCore::Image ;}
     PureCore::PureType getInputType()  { return PureCore::Image ;}

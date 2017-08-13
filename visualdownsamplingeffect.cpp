@@ -81,6 +81,22 @@ QWidget* VisualDownSamplingEffect::getParamWidget()
     return gemwidget;
 }
 
+QVector<QVariant> VisualDownSamplingEffect::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(QVariant(gemwidget->rate));
+
+    return res;
+}
+
+void VisualDownSamplingEffect::setParameters(QVector<QVariant> p)
+{
+    gemwidget->rate = p[0].toInt();
+
+    gemwidget->updateUI();
+}
 
 VisualDownSamplingWidget::VisualDownSamplingWidget()
     : QDialog()

@@ -27,6 +27,8 @@ public:
                     "de chaque pixel."
                     );
     }
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
 private:
 

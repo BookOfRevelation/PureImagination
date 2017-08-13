@@ -16,6 +16,16 @@ class AnaglyphWidget : public QDialog
 public:
     AnaglyphWidget();
 
+    void updateUI()
+    {
+        rxSS->setValue(rx);
+        rySS->setValue(ry);
+        gxSS->setValue(gx);
+        gySS->setValue(gy);
+        bxSS->setValue(bx);
+        bySS->setValue(by);
+    }
+
 //PARAMETERS
     int rx;
     int ry;
@@ -65,6 +75,8 @@ public:
     PureCore::PureType getOutputType() { return PureCore::Image ;}
     PureCore::PureType getInputType()  { return PureCore::Image ;}
 
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
 
     QPair<QString, QString> getInfo()
     {

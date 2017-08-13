@@ -18,6 +18,9 @@ public:
 
     void process();
 
+    void setParameters(QVector<QVariant> p);
+    QVector<QVariant> getParameters() const;
+
     QWidget* getParamWidget();
 
     PureCore::PureType getOutputType() { return PureCore::Image ;}

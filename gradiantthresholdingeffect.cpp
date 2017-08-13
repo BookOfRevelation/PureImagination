@@ -103,6 +103,24 @@ QWidget* GradiantThresholdingEffect::getParamWidget()
     return gemwidget;
 }
 
+QVector<QVariant> GradiantThresholdingEffect::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();
+
+    res.push_back(QVariant(gemwidget->seuil));
+
+    return res;
+
+}
+
+void GradiantThresholdingEffect::setParameters(QVector<QVariant> p)
+{
+    gemwidget->seuil = p[0].toInt();
+
+    gemwidget->updateUI();
+}
+
 
 GradiantThresholdingWidget::GradiantThresholdingWidget(GradiantThresholdingEffect* effect)
     : QWidget(), burgle(effect)
