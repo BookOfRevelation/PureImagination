@@ -34,6 +34,7 @@
 #include <QMessageBox>
 #include <QGraphicsBlurEffect>
 #include "pureconfiguration.h"
+#include <QDesktopServices>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -291,7 +292,11 @@ void MainWindow::effectProcessed(bool success)
     pbar->setValue(pbar->maximum());
     if(success)
     {
-        QMessageBox::information(this, "Success", "Le traitement est terminé.");
+         if(QMessageBox::information(this, "Success", "Processing suceeded.", QMessageBox::Ok | QMessageBox::Open) == QMessageBox::Open)
+         {
+            QDesktopServices::openUrl(QUrl(PureCore::lastTargetDir));
+         }
+
     }
     else
     {

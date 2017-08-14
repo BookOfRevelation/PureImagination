@@ -4,6 +4,8 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsOpacityEffect>
 #include <QGraphicsTextItem>
+#include <QDesktopServices>
+#include <QUrl>
 
 PureScene::PureScene()
     : QGraphicsScene()
@@ -149,8 +151,10 @@ void PureScene::run()
 
             }
         }
-        //emit endChain(true);
-        QMessageBox::information(nullptr, "Success", "Le traitement est terminé.");
+        if(QMessageBox::information(nullptr, "Success", "Processing suceeded.", QMessageBox::Ok | QMessageBox::Open) == QMessageBox::Open)
+        {
+           QDesktopServices::openUrl(QUrl(PureCore::lastTargetDir));
+        }
     }
     else
     {
