@@ -15,7 +15,6 @@ PureCommand::~PureCommand()
 
 void PureCommand::undo()
 {
-    qDebug()<<"Undo "<<commandParameter->effect->name;
     commandParameter->scene->removeEffect(commandParameter->effect);
     int index = parent->index();
     if(index > 1)
@@ -34,7 +33,6 @@ void PureCommand::undo()
 
 void PureCommand::redo()
 {
-    qDebug()<<"Redo "<<commandParameter->effect->name;
     commandParameter->scene->addEffect(commandParameter->effect);
     commandParameter->currentEffect = commandParameter->effect;
 

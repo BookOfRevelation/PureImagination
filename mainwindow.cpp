@@ -221,7 +221,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
         updateEnabledEffects();
 
-        this->resize(1024,768);
+        this->resize(PureConfiguration::windowGeometry[0],PureConfiguration::windowGeometry[1]);
+        this->move(PureConfiguration::windowGeometry[2], PureConfiguration::windowGeometry[3]);
 
 
 }
@@ -236,7 +237,10 @@ MainWindow::~MainWindow()
     }
 
     effects.clear();
-
+    PureConfiguration::windowGeometry[0] = this->width();
+    PureConfiguration::windowGeometry[1] = this->height();
+    PureConfiguration::windowGeometry[2] = this->pos().x();
+    PureConfiguration::windowGeometry[3] = this->pos().y();
     PureConfiguration::saveConf();
 
 }

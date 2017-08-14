@@ -12,8 +12,9 @@ public:
     static void saveConf();
 
 
-    //SETTINGS
-        static QString bgName;
+//SETTINGS
+    static QString bgName;
+    static int windowGeometry[4];
 
 private:
 
