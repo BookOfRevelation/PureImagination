@@ -35,6 +35,7 @@
 #include <QGraphicsBlurEffect>
 #include "pureconfiguration.h"
 #include <QDesktopServices>
+#include "monitoringwidget.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -217,6 +218,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
         pbar = new QProgressBar;
         statusbar->addPermanentWidget(pbar);
+        statusbar->addPermanentWidget(new MonitoringWidget());
         statusbar->showMessage("Ready.");
 
         updateEnabledEffects();

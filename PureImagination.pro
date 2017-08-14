@@ -60,7 +60,9 @@ SOURCES += main.cpp\
     subliminaleffect.cpp \
     pureconfiguration.cpp \
     purecommand.cpp \
-    commandparameters.cpp
+    commandparameters.cpp \
+    megamonitoring.cpp \
+    monitoringwidget.cpp
 
 HEADERS  += mainwindow.h \
     gempuzzleeffect.h \
@@ -110,7 +112,9 @@ HEADERS  += mainwindow.h \
     subliminaleffect.h \
     pureconfiguration.h \
     purecommand.h \
-    commandparameters.h
+    commandparameters.h \
+    megamonitoring.h \
+    monitoringwidget.h
 
 FORMS    +=
 
