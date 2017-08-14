@@ -14,7 +14,7 @@ class PureScene : public QGraphicsScene
 public:
     PureScene();
 
-    void addEffect(PureEffect* e);
+    PureEffect *addEffect(PureEffect* e);
     void removeEffect(PureEffect* e);
 
     void run();

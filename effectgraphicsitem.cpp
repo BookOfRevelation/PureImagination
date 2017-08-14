@@ -6,6 +6,12 @@ EffectGraphicsItem::EffectGraphicsItem(PureEffect* e)
    this->setAcceptHoverEvents(true);
 }
 
+
+EffectGraphicsItem::~EffectGraphicsItem()
+{
+    delete this->effect;
+}
+
 void EffectGraphicsItem::hoverEnterEvent(QGraphicsSceneHoverEvent *e)
 {
     QGraphicsItem::hoverEnterEvent(e);

@@ -18,6 +18,13 @@ public:
 
     void process();
 
+    PureEffect* clone()
+    {
+        RgbToHsv* e = new RgbToHsv(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
     void setParameters(QVector<QVariant> p);
     QVector<QVariant> getParameters() const;
 

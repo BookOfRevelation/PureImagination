@@ -41,6 +41,14 @@ public:
 
     void process();
 
+    PureEffect* clone()
+    {
+        WavBinImage* e = new WavBinImage(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
+
 
     void setParameters(QVector<QVariant> p);
     QVector<QVariant> getParameters() const;

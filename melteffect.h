@@ -13,6 +13,12 @@ public:
     bool init();
 
     void process();
+    PureEffect* clone()
+    {
+        MeltEffect* e = new MeltEffect(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
 
     void setParameters(QVector<QVariant> p);
     QVector<QVariant> getParameters() const;

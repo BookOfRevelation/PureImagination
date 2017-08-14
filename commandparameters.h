@@ -12,6 +12,7 @@ class CommandParameters
 {
 public:
     CommandParameters();
+    ~CommandParameters();
 
     PureScene* scene;
     PureEffect* effect;

@@ -49,6 +49,13 @@ public:
 
     void process();
 
+//    PureEffect* clone()
+//    {
+//        //GradiantThresholdingEffect* e = new GradiantThresholdingEffect(this->name);
+//        //e->setParameters(this->getParameters());
+//        return e;
+//    }
+
     void setParameters(QVector<QVariant> p);
     QVector<QVariant> getParameters() const;
 

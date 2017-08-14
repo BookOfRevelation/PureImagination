@@ -47,6 +47,14 @@ public:
 
     void process();
 
+    PureEffect* clone()
+    {
+        OldVcrEffect* e = new OldVcrEffect(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
+
     void setParameters(QVector<QVariant> p);
     QVector<QVariant> getParameters() const;
 

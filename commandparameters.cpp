@@ -6,3 +6,11 @@ CommandParameters::CommandParameters()
     scene =  nullptr;
     effect = currentEffect = nullptr;
 }
+
+CommandParameters::~CommandParameters()
+{
+    if(effect)
+    {
+        delete effect;
+    }
+}

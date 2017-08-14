@@ -102,6 +102,14 @@ public:
 
     void process();
 
+    PureEffect* clone()
+    {
+        RetriggerEffect* e = new RetriggerEffect(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
+
     void setParameters(QVector<QVariant> p);
     QVector<QVariant> getParameters() const;
 

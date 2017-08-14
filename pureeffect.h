@@ -35,6 +35,8 @@ public:
 
     virtual QPair<QString, QString> getInfo() = 0;
 
+    virtual PureEffect* clone() = 0;
+
     bool binded;
 
     QString name;

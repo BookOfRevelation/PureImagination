@@ -48,6 +48,13 @@ public:
 
     void process();
 
+    PureEffect* clone()
+    {
+        CompositionEffect* e = new CompositionEffect(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
     void setParameters(QVector<QVariant> p);
     QVector<QVariant> getParameters() const;
 

@@ -16,6 +16,13 @@ public:
     bool init();
     void process();
 
+    PureEffect* clone()
+    {
+        GifLoader* e = new GifLoader(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
     QPair<QString, QString> getInfo()
     {
         return  QPair<QString, QString>(

@@ -324,7 +324,7 @@ void MainWindow::activeEffect(bool active)
 void MainWindow::showEffect(PureEffect *e)
 {
     CommandParameters* cmd = new CommandParameters();
-    cmd->effect = e;
+    cmd->effect = e->clone();
     cmd->scene = scene;
     cmd->currentEffect = currentEffect;
 
@@ -430,6 +430,8 @@ void MainWindow::clear()
             undoStack->clear();
         }
 
+        this->pbar->setValue(0);
+        this->statusBar()->showMessage("Ready.");
         updateEnabledEffects();
     }
 }

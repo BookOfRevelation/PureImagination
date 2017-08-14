@@ -43,6 +43,14 @@ public:
 
     void process();
 
+    PureEffect* clone()
+    {
+        VisualDownSamplingEffect* e = new VisualDownSamplingEffect(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
+
 
     void setParameters(QVector<QVariant> p);
     QVector<QVariant> getParameters() const;

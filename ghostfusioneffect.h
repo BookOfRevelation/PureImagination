@@ -13,6 +13,13 @@ public:
 
     void process();
 
+    PureEffect* clone()
+    {
+        GhostFusionEffect* e = new GhostFusionEffect(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
     PureCore::PureType getOutputType() { return PureCore::Image ;}
     PureCore::PureType getInputType()  { return PureCore::Image ;}
 

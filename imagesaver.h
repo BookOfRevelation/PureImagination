@@ -13,6 +13,13 @@ public:
     bool init();
     void process();
 
+    PureEffect* clone()
+    {
+        ImageSaver* e = new ImageSaver(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
     void setParameters(QVector<QVariant> p);
     QVector<QVariant> getParameters() const;
 

@@ -16,6 +16,15 @@ public:
     bool init();
     void process();
 
+
+    PureEffect* clone()
+    {
+        ImageLoader* e = new ImageLoader(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
+
     void setParameters(QVector<QVariant> p);
     QVector<QVariant> getParameters() const;
 

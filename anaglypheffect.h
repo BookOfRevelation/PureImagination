@@ -70,6 +70,13 @@ public:
 
     void process();
 
+    PureEffect* clone()
+    {
+        AnaglyphEffect* e = new AnaglyphEffect(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
     QWidget* getParamWidget();
 
     PureCore::PureType getOutputType() { return PureCore::Image ;}

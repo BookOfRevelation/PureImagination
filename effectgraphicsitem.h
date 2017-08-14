@@ -8,6 +8,7 @@ class EffectGraphicsItem : public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 public:
     EffectGraphicsItem(PureEffect* e);
+     ~EffectGraphicsItem();
 
     void hoverEnterEvent(QGraphicsSceneHoverEvent* e);
     void hoverLeaveEvent(QGraphicsSceneHoverEvent* e);

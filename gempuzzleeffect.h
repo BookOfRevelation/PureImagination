@@ -62,6 +62,13 @@ public:
 
     void process();
 
+    PureEffect* clone()
+    {
+        GemPuzzleEffect* e = new GemPuzzleEffect(this->name);
+        e->setParameters(this->getParameters());
+        return e;
+    }
+
     void setParameters(QVector<QVariant> p);
     QVector<QVariant> getParameters() const;
 

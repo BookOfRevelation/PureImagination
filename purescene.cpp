@@ -25,9 +25,9 @@ void PureScene::clean()
 
 }
 
-void PureScene::addEffect(PureEffect *e)
+PureEffect* PureScene::addEffect(PureEffect *ev)
 {
-
+    PureEffect* e = ev->clone();
         PureCore::PureNature n = e->getNature();
         QString file;
         switch(n)
@@ -87,17 +87,18 @@ void PureScene::addEffect(PureEffect *e)
         });
         eitems.push_back(QPair<QPair<EffectGraphicsItem*, QGraphicsTextItem*>, PureEffect*>(QPair<EffectGraphicsItem*, QGraphicsTextItem*>(pitem, tit), e));
 
+        return e;
 
 }
 
 void PureScene::removeEffect(PureEffect *e)
 {
     bool notFound = true;
-    for(int i = 0 ; i < eitems.count() && notFound; ++i)
+    for(int i = eitems.count() -1 ; i >= 0  && notFound; --i)
     {
         QGraphicsItem* it = nullptr;
         QGraphicsTextItem* tit = nullptr;
-        if(eitems[i].second == e)
+        if(eitems[i].first.first->effect->name == e->name)
         {
             it = eitems[i].first.first;
             tit = eitems[i].first.second;
