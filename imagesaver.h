@@ -2,6 +2,42 @@
 #define IMAGESAVER_H
 #include "puresaver.h"
 #include <QVariant>
+#include <QDialog>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QFileDialog>
+#include <QLabel>
+#include <QComboBox>
+
+class ImageSaverWidget : public QDialog
+{
+    Q_OBJECT
+
+public:
+    ImageSaverWidget();
+
+    void updateUI()
+    {
+        dirLe->setText(baseDir);
+        extCb->setCurrentIndex(extCb->findText(ext));
+    }
+
+//PARAMETERS
+    QString baseDir;
+    QString ext;
+
+private:
+
+    QLineEdit* dirLe;
+    QComboBox* extCb;
+    QPushButton* loadBtn;
+
+    QPushButton* okButton;
+    QPushButton* cancelButton;
+
+
+
+};
 
 class ImageSaver : public PureSaver
 {
@@ -35,7 +71,8 @@ public:
     }
 
 private:
-    QString targetPath;
+
+    ImageSaverWidget* widget;
 
 };
 
