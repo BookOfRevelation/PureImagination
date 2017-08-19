@@ -43,6 +43,7 @@ class ImageSaver : public PureSaver
 {
 public:
     ImageSaver(const QString &n);
+    ~ImageSaver();
 
     PureCore::PureType getInputType();
 

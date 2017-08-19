@@ -9,6 +9,10 @@ ImageSaver::ImageSaver(const QString &n)
 {
     widget = new ImageSaverWidget;
 }
+ImageSaver::~ImageSaver()
+{
+    delete widget;
+}
 
 PureCore::PureType ImageSaver::getInputType()
 {
@@ -109,7 +113,10 @@ ImageSaverWidget::ImageSaverWidget()
         QString targetPath = QFileDialog::getExistingDirectory(nullptr, QString("Target Directory"),
                                                                PureCore::lastTargetDir,
                                                                QFileDialog::ShowDirsOnly);
-        dirLe->setText(targetPath + "/");
+        if(targetPath != "")
+        {
+            dirLe->setText(targetPath + "/");
+        }
     });
 
 }

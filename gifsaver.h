@@ -1,12 +1,48 @@
 #ifndef GIFSAVER_H
 #define GIFSAVER_H
 #include "puresaver.h"
+#include "slidespiner.h"
 #include <QVariant>
+#include <QDialog>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QFileDialog>
+#include <QLabel>
+
+class GifSaverWidget : public QDialog
+{
+    Q_OBJECT
+
+public:
+
+    GifSaverWidget();
+    void updateUI()
+    {
+        speedSS->setValue(speed);
+        dirLe->setText(baseDir);
+    }
+
+
+//PARAMETERS
+    int speed;
+    QString baseDir;
+
+private:
+    SlideSpiner* speedSS;
+
+    QLineEdit* dirLe;
+    QPushButton* loadBtn;
+
+    QPushButton* okButton;
+    QPushButton* cancelButton;
+
+};
 
 class GifSaver : public PureSaver
 {
 public:
     GifSaver(const QString &n);
+    ~GifSaver();
 
     PureCore::PureType getInputType();
 
@@ -35,7 +71,8 @@ public:
     QVector<QVariant> getParameters() const;
 
 private:
-    QString targetPath;
+
+    GifSaverWidget* widget;
 };
 
 #endif // GIFSAVER_H

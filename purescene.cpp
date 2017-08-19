@@ -63,7 +63,7 @@ PureEffect* PureScene::addEffect(PureEffect *ev)
             break;
         }
 
-        QPixmap pm(QString(":/res/effects/%1%2.png").arg(file).arg(type));
+        QPixmap pm(QString(":/res/effects/Puzzle-%1.png").arg(file));
 
         EffectGraphicsItem* pitem = new EffectGraphicsItem(e);
         pitem->setPixmap(pm);

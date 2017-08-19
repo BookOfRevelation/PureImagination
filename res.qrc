@@ -24,5 +24,8 @@
         <file>runicon.png</file>
         <file>redoicon.png</file>
         <file>undoicon.png</file>
+        <file>effects/Puzzle-filter.png</file>
+        <file>effects/Puzzle-loader.png</file>
+        <file>effects/Puzzle-saver.png</file>
     </qresource>
 </RCC>
