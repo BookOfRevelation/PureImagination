@@ -80,6 +80,7 @@ ImageSaverWidget::ImageSaverWidget()
     extCb = new QComboBox;
     extCb->addItem(".jpg");
     extCb->addItem(".png");
+    extCb->addItem(".bmp");
     nameLt->addWidget(extCb);
 
     mainLt->addLayout(nameLt);
