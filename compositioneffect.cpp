@@ -164,7 +164,7 @@ void CompositionEffect::setParameters(QVector<QVariant> p)
 
     for(int i = 0 ; i < imageCount ; ++i)
     {
-        widget->pixelImages[i] = p[2+i].value<QImage>();
+        widget->pixelImages.push_back(p[2+i].value<QImage>());
     }
 
     widget->updateUI();
@@ -199,7 +199,17 @@ CompositionWidget::CompositionWidget()
 
     connect(pixelSS, &SlideSpiner::valueChanged, this, &CompositionWidget::onPixelModified);
     connect(loadBtn, &QPushButton::pressed, this, &CompositionWidget::onImageLoad);
-    connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
+    connect(processBtn, &QAbstractButton::pressed, this, [this]()
+    {
+        if (outputLine->text() == "")
+        {
+            this->reject();
+        }
+        else
+        {
+            this->accept();
+        }
+    });
 }
 
 
@@ -224,7 +234,6 @@ void CompositionWidget::onImageLoad()
         QString name;
         foreach (name, filePath)
         {
-
             pixelImages.push_back(QImage(name));
             outputLine->setText(outputLine->text() + name + "; ");
         }
