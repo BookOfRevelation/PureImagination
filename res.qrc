@@ -27,5 +27,18 @@
         <file>effects/Puzzle-filter.png</file>
         <file>effects/Puzzle-loader.png</file>
         <file>effects/Puzzle-saver.png</file>
+        <file>examples/Anaglyph.jpg</file>
+        <file>examples/Composition.jpg</file>
+        <file>examples/DownSampling.jpg</file>
+        <file>examples/GemPuzzle.jpg</file>
+        <file>examples/HsvToRgb.jpg</file>
+        <file>examples/MeltEffect.jpg</file>
+        <file>examples/ModuloPush.jpg</file>
+        <file>examples/Noizifier.jpg</file>
+        <file>examples/OldVcr.jpg</file>
+        <file>examples/Retrigger.jpg</file>
+        <file>examples/RgbToHsv.jpg</file>
+        <file>examples/SymbioticMess.jpg</file>
+        <file>examples/VisualCrush.jpg</file>
     </qresource>
 </RCC>

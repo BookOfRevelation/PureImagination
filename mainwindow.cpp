@@ -146,7 +146,7 @@ MainWindow::MainWindow(QWidget *parent) :
         PureTreeItem* i = dynamic_cast<PureTreeItem*>(item);
         if(i)
         {
-            hz->setWidget(i->getEffect()->getInfo().first, i->getEffect()->getInfo().second);
+            hz->setWidget(i->getEffect()->getInfo().first, i->getEffect()->name);
         }
         else
         {

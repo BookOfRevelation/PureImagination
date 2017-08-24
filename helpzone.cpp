@@ -21,6 +21,7 @@ HelpZone::HelpZone(QWidget *parent) : QWidget(parent)
 void HelpZone::setWidget(const QString& t, const QString& d)
 {
     ttl->setText(t);
-    desc->setText(d);
+    //desc->setText(d);
+    desc->setPixmap(QPixmap(QString(":/res/examples/%1.jpg").arg(d)));
 
 }

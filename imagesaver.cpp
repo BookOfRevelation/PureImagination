@@ -51,6 +51,7 @@ QVector<QVariant> ImageSaver::getParameters() const
 void ImageSaver::setParameters(QVector<QVariant> p)
 {
     widget->baseDir = p[0].toString();
+    PureCore::lastTargetDir = widget->baseDir;
     widget->ext = p[1].toString();
 
     widget->updateUI();
