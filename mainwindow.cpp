@@ -36,6 +36,8 @@
 #include "pureconfiguration.h"
 #include <QDesktopServices>
 #include "monitoringwidget.h"
+#include "texttoimg.h"
+#include "plaintextloader.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -214,6 +216,8 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new GifLoader("Animated Gif") );
         addEffect(new GifSaver("Animateg Gif") );
         addEffect(new SubliminalEffect("Subliminal Effect"));
+        addEffect(new PlainTextLoader("Text"));
+        addEffect(new TextToImg("TextToImage"));
 
 
         pbar = new QProgressBar;

@@ -11,7 +11,7 @@ public:
 
     enum PureType
     {
-        NoType, Image, XYZ, Wave
+        NoType, Image, XYZ, Wave, Text
     };
 
     enum PureNature

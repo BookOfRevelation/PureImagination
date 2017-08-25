@@ -40,5 +40,6 @@
         <file>examples/RgbToHsv.jpg</file>
         <file>examples/SymbioticMess.jpg</file>
         <file>examples/VisualCrush.jpg</file>
+        <file>effects/Puzzle-transformater.png</file>
     </qresource>
 </RCC>

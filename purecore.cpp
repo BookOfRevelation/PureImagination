@@ -59,6 +59,7 @@ QString PureCore::TypeToStr(PureType n)
     case PureCore::Image  : result = "images"; break;
     case PureCore::XYZ    : result = "point cloud"; break;
     case PureCore::Wave   : result = "wave audio"; break;
+    case PureCore::Text   : result = "plain text"; break;
     }
 
     return result;

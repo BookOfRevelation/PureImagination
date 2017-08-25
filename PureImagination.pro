@@ -62,7 +62,10 @@ SOURCES += main.cpp\
     purecommand.cpp \
     commandparameters.cpp \
     megamonitoring.cpp \
-    monitoringwidget.cpp
+    monitoringwidget.cpp \
+    plaintextloader.cpp \
+    puretext.cpp \
+    texttoimg.cpp
 
 HEADERS  += mainwindow.h \
     gempuzzleeffect.h \
@@ -114,7 +117,10 @@ HEADERS  += mainwindow.h \
     purecommand.h \
     commandparameters.h \
     megamonitoring.h \
-    monitoringwidget.h
+    monitoringwidget.h \
+    plaintextloader.h \
+    puretext.h \
+    texttoimg.h
 
 FORMS    +=
 
