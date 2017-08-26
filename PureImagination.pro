@@ -51,9 +51,9 @@ SOURCES += main.cpp\
     roidialog.cpp \
     anaglypheffect.cpp \
     tiltshifteffect.cpp \
-    wavbinimage.cpp \
-    pureaudio.cpp \
-    wavloader.cpp \
+    #wavbinimage.cpp \
+    #pureaudio.cpp \
+    #wavloader.cpp \
     melteffect.cpp \
     gifloader.cpp \
     gifsaver.cpp \
@@ -105,9 +105,9 @@ HEADERS  += mainwindow.h \
     roidialog.h \
     anaglypheffect.h \
     tiltshifteffect.h \
-    wavbinimage.h \
-    pureaudio.h \
-    wavloader.h \
+    #wavbinimage.h \
+    #pureaudio.h \
+    #wavloader.h \
     melteffect.h \
     gifloader.h \
     gif.h \
@@ -128,8 +128,8 @@ FORMS    +=
 RESOURCES += \
     res.qrc
 
-unix|win32: LIBS += -L$$PWD/'../../../../../Program Files (x86)/Aquila/lib/' -lAquila
+#unix|win32: LIBS += -L$$PWD/'../../../../../Program Files (x86)/Aquila/lib/' -lAquila
 
-INCLUDEPATH += $$PWD/'../../../../../Program Files (x86)/Aquila/include'
-DEPENDPATH += $$PWD/'../../../../../Program Files (x86)/Aquila/include'
+#INCLUDEPATH += $$PWD/'../../../../../Program Files (x86)/Aquila/include'
+#DEPENDPATH += $$PWD/'../../../../../Program Files (x86)/Aquila/include'
 

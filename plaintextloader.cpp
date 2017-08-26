@@ -1,6 +1,7 @@
 #include "plaintextloader.h"
 #include <QFileDialog>
 #include "puretext.h"
+#include <QDebug>
 
 PlainTextLoader::PlainTextLoader(const QString& n)
     : PureLoader(n)
@@ -41,9 +42,15 @@ void PlainTextLoader::process()
     f.open(QIODevice::ReadOnly);
     QByteArray content = f.readAll();
 
-    txt->setText(QString(content));
+    txt->setText("");
+
+    for(int i = 0 ; i < content.size() ; ++i)
+    {
+        txt->addLetter(QChar(content.at(i)));
+    }
 
     PureCore::currentData = txt;
+
     f.close();
 }
 

@@ -21,8 +21,8 @@
 #include "anaglypheffect.h"
 #include "tiltshifteffect.h"
 #include "gifloader.h"
-#include "wavloader.h"
-#include "wavbinimage.h"
+//#include "wavloader.h"
+//#include "wavbinimage.h"
 #include "melteffect.h"
 #include "subliminaleffect.h"
 #include "gifsaver.h"
@@ -193,7 +193,7 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new GemPuzzleEffect("GemPuzzle"));
         addEffect(new ModuloPushEffect("ModuloPush"));
         //addEffect(new ImageToXYZ(), "ImageToXYZ");
-        addEffect(new GhostFusionEffect( "GhostFusion"));
+        //addEffect(new GhostFusionEffect( "GhostFusion"));
         addEffect(new RetriggerEffect("Retrigger") );
         addEffect(new VisualCrushEffect("VisualCrush") );
         addEffect(new VisualDownSamplingEffect("DownSampling") );
@@ -209,8 +209,8 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new SymbioticMessEffect("SymbioticMess"));
         addEffect(new AnaglyphEffect("Anaglyph") );
         //addEffect(new TiltShiftEffect(), "TiltShifting");
-        addEffect(new WavLoader("Wave") );
-        addEffect(new WavBinImage("Wave binary Image") );
+        //addEffect(new WavLoader("Wave") );
+        //addEffect(new WavBinImage("Wave binary Image") );
         addEffect(new MeltEffect("MeltEffect") );
         addEffect(new CompositionEffect("Composition") );
         addEffect(new GifLoader("Animated Gif") );

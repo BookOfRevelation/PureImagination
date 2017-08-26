@@ -2,18 +2,21 @@
 #define PURETEXT_H
 #include "puredata.h"
 #include <QString>
+#include <QVector>
+#include <QChar>
 class PureText : public PureData
 {
 public:
     PureText();
 
+    void addLetter(const QChar& c);
     void setText(const QString& t);
-    QString getText() const;
+    QVector<QChar> getText() const;
 
 
 private:
 
-    QString text;
+    QVector<QChar> text;
 };
 
 #endif // PURETEXT_H
