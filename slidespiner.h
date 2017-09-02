@@ -45,6 +45,15 @@ public:
     void setMaximum(double max);
     void setMinimum(double min);
 
+    double getMinimum() const
+    {
+        return this->spinBox->minimum();
+    }
+    double getMaximum() const
+    {
+        return this->spinBox->maximum();
+    }
+
 
     /**
      * @brief setValue : Set the value at the

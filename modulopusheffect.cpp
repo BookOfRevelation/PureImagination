@@ -127,6 +127,11 @@ ModuloPushWidget::ModuloPushWidget(ModuloPushEffect* effect)
     mainLt->addWidget(maxHSS);
     mainLt->addWidget(minWSS);
     mainLt->addWidget(maxWSS);
+
+    QPushButton* randomBtn = new QPushButton("Randomize");
+    mainLt->addWidget(randomBtn);
+    connect(randomBtn, &QPushButton::pressed, this, &ModuloPushWidget::randomize);
+
     mainLt->addWidget(processBtn);
 
     this->setLayout(mainLt);
@@ -137,6 +142,17 @@ ModuloPushWidget::ModuloPushWidget(ModuloPushEffect* effect)
     connect(maxWSS, SlideSpiner::valueChanged, this, ModuloPushWidget::onMaxWModified);
     connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
 
+}
+
+void ModuloPushWidget::randomize()
+{
+    maxH = PureCore::getRandom(maxHSS->getMinimum(), maxHSS->getMaximum());
+    minH = PureCore::getRandom(minHSS->getMinimum(), minHSS->getMaximum());
+    maxW = PureCore::getRandom(maxWSS->getMinimum(), maxWSS->getMaximum());
+    minW = PureCore::getRandom(minWSS->getMinimum(), minWSS->getMaximum());
+
+
+    updateUI();
 }
 
 

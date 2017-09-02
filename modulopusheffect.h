@@ -17,6 +17,8 @@ class ModuloPushWidget : public QDialog
 public:
     ModuloPushWidget(ModuloPushEffect* effect);
 
+    void randomize();
+
     void updateUI()
     {
         minHSS->setValue(minH);

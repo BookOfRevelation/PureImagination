@@ -177,6 +177,10 @@ RetriggerWidget::RetriggerWidget()
     mainLt->addWidget(minNbSS);
     mainLt->addWidget(maxNbSS);
 
+    QPushButton* randomBtn = new QPushButton("Randomize");
+    mainLt->addWidget(randomBtn);
+    connect(randomBtn, &QPushButton::pressed, this, &RetriggerWidget::randomize);
+
     mainLt->addWidget(processBtn);
 
     this->setLayout(mainLt);
@@ -197,6 +201,27 @@ RetriggerWidget::RetriggerWidget()
     connect(maxNbSS, SlideSpiner::valueChanged, this, RetriggerWidget::onNumberMaxModified);
     connect(processBtn, QAbstractButton::pressed, this, &QDialog::accept);
 
+}
+
+void RetriggerWidget::randomize()
+{
+    maxH = PureCore::getRandom(maxHSS->getMinimum(), maxHSS->getMaximum());
+    minH = PureCore::getRandom(minHSS->getMinimum(), minHSS->getMaximum());
+    maxW = PureCore::getRandom(maxWSS->getMinimum(), maxWSS->getMaximum());
+    minW = PureCore::getRandom(minWSS->getMinimum(), minWSS->getMaximum());
+
+    minOffsetW = PureCore::getRandom(offsetWmnSS->getMinimum(), offsetWmnSS->getMaximum());
+    maxOffsetW = PureCore::getRandom(offsetWmxSS->getMinimum(), offsetWmxSS->getMaximum());
+    minOffsetH = PureCore::getRandom(offsetHmnSS->getMinimum(), offsetHmnSS->getMaximum());
+    maxOffsetH = PureCore::getRandom(offsetHmxSS->getMinimum(), offsetHmxSS->getMaximum());
+
+    repeatMin = PureCore::getRandom(minRptSS->getMinimum(), minRptSS->getMaximum());
+    repeatMax = PureCore::getRandom(maxRptSS->getMinimum(), maxRptSS->getMaximum());
+    numberMin = PureCore::getRandom(minNbSS->getMinimum(), minNbSS->getMaximum());
+    numberMax = PureCore::getRandom(maxNbSS->getMinimum(), maxNbSS->getMaximum());
+
+
+    updateUI();
 }
 
 

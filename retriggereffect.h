@@ -14,6 +14,8 @@ class RetriggerWidget : public QDialog
 public:
     RetriggerWidget();
 
+    void randomize();
+
     void updateUI()
     {
         minHSS->setValue(minH);

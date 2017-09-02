@@ -7,8 +7,6 @@
 #include <QSplashScreen>
 #include "purecore.h"
 #include "roidialog.h"
-#include <aquila/global.h>
-#include <aquila/source/WaveFile.h>
 #include <iostream>
 #include "pureconfiguration.h"
 

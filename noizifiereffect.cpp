@@ -93,6 +93,11 @@ NoizifierWidget::NoizifierWidget(NoizifierEffect* effect)
     processBtn = new QPushButton("Ok");
 
     mainLt->addWidget(rateSS);
+
+    QPushButton* randomBtn = new QPushButton("Randomize");
+    mainLt->addWidget(randomBtn);
+    connect(randomBtn, &QPushButton::pressed, this, &NoizifierWidget::randomize);
+
     mainLt->addWidget(processBtn);
 
     this->setLayout(mainLt);
@@ -100,6 +105,12 @@ NoizifierWidget::NoizifierWidget(NoizifierEffect* effect)
     connect(rateSS, SlideSpiner::valueChanged, this, NoizifierWidget::onRateModified);
     connect(processBtn, QAbstractButton::pressed, this, &QDialog::accept);
 
+}
+
+void NoizifierWidget::randomize()
+{
+    rate = PureCore::getRandom(rateSS->getMinimum(), rateSS->getMaximum());
+    updateUI();
 }
 
 

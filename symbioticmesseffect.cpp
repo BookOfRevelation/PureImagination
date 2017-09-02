@@ -153,6 +153,11 @@ SymbioticMessWidget::SymbioticMessWidget()
 
     mainLt->addWidget(chanceSS);
     mainLt->addWidget(rateSS);
+
+    QPushButton* randomBtn = new QPushButton("Randomize");
+    mainLt->addWidget(randomBtn);
+    connect(randomBtn, &QPushButton::pressed, this, &SymbioticMessWidget::randomize);
+
     mainLt->addWidget(processBtn);
 
     this->setLayout(mainLt);
@@ -161,6 +166,14 @@ SymbioticMessWidget::SymbioticMessWidget()
     connect(chanceSS, SlideSpiner::valueChanged, this, SymbioticMessWidget::onChanceModified);
     connect(processBtn, QAbstractButton::pressed, this, &QDialog::accept);
 
+}
+
+
+void SymbioticMessWidget::randomize()
+{
+    rate = PureCore::getRandom(rateSS->getMinimum(), rateSS->getMaximum());
+    chance = PureCore::getRandom(chanceSS->getMinimum(), chanceSS->getMaximum());
+    updateUI();
 }
 
 

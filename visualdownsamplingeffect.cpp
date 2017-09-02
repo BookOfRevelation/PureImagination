@@ -109,6 +109,12 @@ VisualDownSamplingWidget::VisualDownSamplingWidget()
     processBtn = new QPushButton("Ok");
 
     mainLt->addWidget(rateSS);
+
+
+    QPushButton* randomBtn = new QPushButton("Randomize");
+    mainLt->addWidget(randomBtn);
+    connect(randomBtn, &QPushButton::pressed, this, &VisualDownSamplingWidget::randomize);
+
     mainLt->addWidget(processBtn);
 
     this->setLayout(mainLt);
@@ -117,6 +123,13 @@ VisualDownSamplingWidget::VisualDownSamplingWidget()
     connect(processBtn, QAbstractButton::pressed, this, &QDialog::accept);
 
 
+}
+
+void VisualDownSamplingWidget::randomize()
+{
+    rate = PureCore::getRandom(rateSS->getMinimum(), rateSS->getMaximum());
+
+    updateUI();
 }
 
 

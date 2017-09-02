@@ -14,14 +14,16 @@ class GemWidget : public QDialog
     Q_OBJECT
 public:
     GemWidget();
+    void randomize();
 
 
     void updateUI()
     {
+        maxHSS->setValue(maxH);
         minHSS->setValue(minH);
-        minHSS->setValue(maxH);
-        minHSS->setValue(minW);
-        minHSS->setValue(maxW);
+        maxWSS->setValue(maxW);
+        minWSS->setValue(minW);
+
     }
 
 //PARAMETERS

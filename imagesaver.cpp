@@ -33,7 +33,7 @@ void ImageSaver::process()
         QString baseName = data->getName(i).split(".")[0];
         QString targetPath = widget->baseDir + baseName + widget->ext;
         QImage img = data->getImage(i);
-        qDebug()<<targetPath;
+        PureCore::lastTargetDir = widget->baseDir;
         img.save(targetPath);
 
     }

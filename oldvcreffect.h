@@ -15,6 +15,8 @@ class OldVcrWidget : public QDialog
 public:
     OldVcrWidget();
 
+    void randomize();
+
     void updateUI()
     {
         rateSS->setValue(rate);

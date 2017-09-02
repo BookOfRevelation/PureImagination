@@ -18,6 +18,8 @@ public:
     int rate;
     int chance;
 
+    void randomize();
+
     void updateUI()
     {
         rateSS->setValue(rate);

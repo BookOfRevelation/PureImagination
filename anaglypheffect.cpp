@@ -222,6 +222,11 @@ AnaglyphWidget::AnaglyphWidget()
     mainLt->addWidget(gySS);
     mainLt->addWidget(bxSS);
     mainLt->addWidget(bySS);
+
+    QPushButton* randomBtn = new QPushButton("Randomize");
+    mainLt->addWidget(randomBtn);
+    connect(randomBtn, &QPushButton::pressed, this, &AnaglyphWidget::randomize);
+
     mainLt->addWidget(processBtn);
 
     this->setLayout(mainLt);
@@ -235,6 +240,18 @@ AnaglyphWidget::AnaglyphWidget()
     connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
 
 
+}
+
+void AnaglyphWidget::randomize()
+{
+    rx = PureCore::getRandom(rxSS->getMinimum(), rxSS->getMaximum());
+    ry = PureCore::getRandom(rySS->getMinimum(), rySS->getMaximum());
+    gx = PureCore::getRandom(gxSS->getMinimum(), gxSS->getMaximum());
+    gy = PureCore::getRandom(gySS->getMinimum(), gySS->getMaximum());
+    bx = PureCore::getRandom(bxSS->getMinimum(), bxSS->getMaximum());
+    by = PureCore::getRandom(bySS->getMinimum(), bySS->getMaximum());
+
+    updateUI();
 }
 
 

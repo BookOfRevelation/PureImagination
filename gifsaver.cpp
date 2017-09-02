@@ -45,6 +45,7 @@ void GifSaver::process()
         GifWriteFrame(w ,curImg.bits(), curImg.width(), curImg.height(),widget->speed);
     }
     GifEnd(w);
+    PureCore::lastTargetDir = widget->baseDir;
 
 }
 

@@ -175,6 +175,9 @@ OldVcrWidget::OldVcrWidget()
 
     mainLt->addWidget(rateSS);
     mainLt->addWidget(bwSS);
+    QPushButton* randomBtn = new QPushButton("Randomize");
+    mainLt->addWidget(randomBtn);
+    connect(randomBtn, &QPushButton::pressed, this, &OldVcrWidget::randomize);
     mainLt->addWidget(processBtn);
 
     this->setLayout(mainLt);
@@ -184,6 +187,13 @@ OldVcrWidget::OldVcrWidget()
     connect(processBtn, QAbstractButton::pressed, this, &QDialog::accept);
 }
 
+void OldVcrWidget::randomize()
+{
+    rate = PureCore::getRandom(rateSS->getMinimum(), rateSS->getMaximum());
+    bw = PureCore::getRandom(bwSS->getMinimum(), bwSS->getMaximum());
+
+    updateUI();
+}
 
 void OldVcrWidget::onRateModified(double v)
 {

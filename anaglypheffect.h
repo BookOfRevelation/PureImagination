@@ -16,6 +16,8 @@ class AnaglyphWidget : public QDialog
 public:
     AnaglyphWidget();
 
+    void randomize();
+
     void updateUI()
     {
         rxSS->setValue(rx);

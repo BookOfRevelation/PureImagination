@@ -106,6 +106,12 @@ VisualCrushWidget::VisualCrushWidget()
     processBtn = new QPushButton("Ok");
 
     mainLt->addWidget(rateSS);
+
+
+    QPushButton* randomBtn = new QPushButton("Randomize");
+    mainLt->addWidget(randomBtn);
+    connect(randomBtn, &QPushButton::pressed, this, &VisualCrushWidget::randomize);
+
     mainLt->addWidget(processBtn);
 
     this->setLayout(mainLt);
@@ -115,6 +121,12 @@ VisualCrushWidget::VisualCrushWidget()
 
 }
 
+void VisualCrushWidget::randomize()
+{
+    rate = PureCore::getRandom(rateSS->getMinimum(), rateSS->getMaximum());
+
+    updateUI();
+}
 
 void VisualCrushWidget::onRateModified(double v)
 {

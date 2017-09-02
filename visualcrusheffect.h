@@ -13,6 +13,7 @@ class VisualCrushWidget : public QDialog
     Q_OBJECT
 public:
     VisualCrushWidget();
+    void randomize();
 
     void updateUI()
     {

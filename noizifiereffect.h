@@ -14,6 +14,8 @@ class NoizifierWidget : public QDialog
 public:
     NoizifierWidget(NoizifierEffect* effect);
 
+    void randomize();
+
     void updateUI()
     {
         rateSS->setValue(rate);

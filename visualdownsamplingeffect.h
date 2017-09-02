@@ -15,6 +15,8 @@ class VisualDownSamplingWidget : public QDialog
 public:
     VisualDownSamplingWidget();
 
+    void randomize();
+
     void updateUI()
     {
         rateSS->setValue(rate);
