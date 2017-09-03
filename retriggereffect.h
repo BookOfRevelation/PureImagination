@@ -18,18 +18,41 @@ public:
 
     void updateUI()
     {
-        minHSS->setValue(minH);
+        maxHSS->setMaximum(99);
+        minHSS->setMinimum(0);
+
+        maxWSS->setMaximum(99);
+        minWSS->setMinimum(0);
+
         maxHSS->setValue(maxH);
-        minWSS->setValue(minW);
+        minHSS->setValue(minH);
+
         maxWSS->setValue(maxW);
-        offsetHmnSS->setValue(minOffsetH);
+        minWSS->setValue(minW);
+
+        offsetWmnSS->setMinimum(0);
+        offsetWmxSS->setMaximum(300);
+
+        offsetHmnSS->setMinimum(0);
+        offsetHmxSS->setMaximum(300);
+
         offsetHmxSS->setValue(maxOffsetH);
-        offsetWmnSS->setValue(minOffsetW);
+        offsetHmnSS->setValue(minOffsetH);
         offsetWmxSS->setValue(maxOffsetW);
-        minRptSS->setValue(repeatMin);
+        offsetWmnSS->setValue(minOffsetW);
+
+
+        minRptSS->setMinimum(1);
+        minNbSS->setMinimum(1);
+
+        maxRptSS->setMaximum(100);
+        maxNbSS->setMaximum(100);
+
         maxRptSS->setValue(repeatMax);
-        minNbSS->setValue(numberMin);
+        minRptSS->setValue(repeatMin);
+
         maxNbSS->setValue(numberMax);
+        minNbSS->setValue(numberMin);
     }
 
 //PARAMETERS

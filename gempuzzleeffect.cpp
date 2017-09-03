@@ -144,7 +144,6 @@ QVector<QVariant> GemPuzzleEffect::getParameters() const
     res.push_back(QVariant(gemwidget->maxH));
     res.push_back(QVariant(gemwidget->minW));
     res.push_back(QVariant(gemwidget->maxW));
-
     return res;
 }
 

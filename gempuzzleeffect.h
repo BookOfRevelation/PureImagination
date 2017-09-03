@@ -19,6 +19,12 @@ public:
 
     void updateUI()
     {
+        maxHSS->setMaximum(99);
+        minHSS->setMinimum(0);
+
+        maxWSS->setMaximum(99);
+        minWSS->setMinimum(0);
+
         maxHSS->setValue(maxH);
         minHSS->setValue(minH);
         maxWSS->setValue(maxW);
