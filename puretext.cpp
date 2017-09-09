@@ -4,7 +4,7 @@
 PureText::PureText()
     : PureData()
 {
-    text.clear();
+    clear();
 }
 
 void PureText::addLetter(const QChar &c)
@@ -25,4 +25,9 @@ void PureText::setText(const QString &t)
 QVector<QChar> PureText::getText() const
 {
     return text;
+}
+
+void PureText::clear()
+{
+    text.clear();
 }

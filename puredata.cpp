@@ -4,3 +4,7 @@ PureData::PureData()
 {
 
 }
+
+PureData::~PureData()
+{
+}

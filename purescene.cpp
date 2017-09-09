@@ -162,6 +162,8 @@ void PureScene::run()
         QMessageBox::critical(nullptr, "Error", "The processing chain must start with a loader and end with a saver.");
     }
 
+    delete PureCore::currentData;
+
 
 }
 

@@ -6,6 +6,7 @@ class PureData
 {
 public:
     PureData();
+    virtual ~PureData();
 };
 
 #endif // PUREDATA_H

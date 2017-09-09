@@ -13,6 +13,8 @@ public:
     void setText(const QString& t);
     QVector<QChar> getText() const;
 
+    void clear();
+
 
 private:
 
