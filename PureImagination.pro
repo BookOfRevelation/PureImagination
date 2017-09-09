@@ -65,7 +65,8 @@ SOURCES += main.cpp\
     monitoringwidget.cpp \
     plaintextloader.cpp \
     puretext.cpp \
-    texttoimg.cpp
+    texttoimg.cpp \
+    scrollereffect.cpp
 
 HEADERS  += mainwindow.h \
     gempuzzleeffect.h \
@@ -120,7 +121,8 @@ HEADERS  += mainwindow.h \
     monitoringwidget.h \
     plaintextloader.h \
     puretext.h \
-    texttoimg.h
+    texttoimg.h \
+    scrollereffect.h
 
 FORMS    +=
 

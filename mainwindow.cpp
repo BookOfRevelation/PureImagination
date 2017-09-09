@@ -38,6 +38,7 @@
 #include "monitoringwidget.h"
 #include "texttoimg.h"
 #include "plaintextloader.h"
+#include "scrollereffect.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -218,6 +219,7 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new SubliminalEffect("Subliminal Effect"));
         addEffect(new PlainTextLoader("Text"));
         addEffect(new TextToImg("TextToImage"));
+        addEffect(new ScrollerEffect("Scrolling Effect"));
 
 
         pbar = new QProgressBar;
