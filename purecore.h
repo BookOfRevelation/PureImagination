@@ -4,7 +4,11 @@
 #include <QString>
 #include <QWidget>
 #include "puredata.h"
+#include "pureimage.h"
+#include "purecondition.h"
 
+
+class PureCondition;
 class PureCore
 {
 public:
@@ -31,6 +35,10 @@ public:
     static PureType currentOutput;
 
     static PureData* currentData;
+
+    static PureImage* noFragement;
+    static PureCondition* condition;
+
 
     static QString TypeToStr(PureType n);
 

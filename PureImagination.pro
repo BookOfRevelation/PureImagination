@@ -66,7 +66,10 @@ SOURCES += main.cpp\
     plaintextloader.cpp \
     puretext.cpp \
     texttoimg.cpp \
-    scrollereffect.cpp
+    scrollereffect.cpp \
+    imagetofragment.cpp \
+    purecondition.cpp \
+    fragmenttoimage.cpp
 
 HEADERS  += mainwindow.h \
     gempuzzleeffect.h \
@@ -122,7 +125,10 @@ HEADERS  += mainwindow.h \
     plaintextloader.h \
     puretext.h \
     texttoimg.h \
-    scrollereffect.h
+    scrollereffect.h \
+    imagetofragment.h \
+    purecondition.h \
+    fragmenttoimage.h
 
 FORMS    +=
 

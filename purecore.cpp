@@ -12,6 +12,8 @@ QString PureCore::lastOpenDir;
 QString PureCore::lastTargetDir;
 PureCore::PureType PureCore::currentOutput;
 PureData* PureCore::currentData;
+PureImage* PureCore::noFragement;
+PureCondition* PureCore::condition;
 
 PureCore::PureCore()
 {
@@ -19,6 +21,9 @@ PureCore::PureCore()
     lastTargetDir = QDir::homePath();
 
     currentOutput = NoType;
+
+    noFragement = nullptr;
+    condition = nullptr;
 }
 
 void PureCore::initRNG()

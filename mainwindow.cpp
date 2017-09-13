@@ -39,6 +39,8 @@
 #include "texttoimg.h"
 #include "plaintextloader.h"
 #include "scrollereffect.h"
+#include "fragmenttoimage.h"
+#include "imagetofragment.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -219,6 +221,8 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new SubliminalEffect("Subliminal Effect"));
         addEffect(new PlainTextLoader("Text"));
         addEffect(new TextToImg("TextToImage"));
+        addEffect(new FragmentToImage("FragmentToImage"));
+        addEffect(new ImageToFragment("ImageToFragment"));
         addEffect(new ScrollerEffect("Scrolling Effect"));
 
 
@@ -429,6 +433,12 @@ void MainWindow::clear()
         {
             delete PureCore::currentData;
             PureCore::currentData = nullptr;
+
+        }
+        if(PureCore::noFragement)
+        {
+            delete PureCore::noFragement;
+            PureCore::noFragement = nullptr;
         }
         PureCore::currentOutput = PureCore::NoType;
         scene->clean();
