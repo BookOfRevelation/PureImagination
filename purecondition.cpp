@@ -59,3 +59,23 @@ bool EvenCondition::addPixel(const QImage &ref, int x, int y)
 
     return ((y)%20 == 0);
 }
+
+ThresholdCondition::ThresholdCondition(int t, bool low)
+    : PureCondition(), threshold(t), isLow(low)
+{
+
+}
+
+bool ThresholdCondition::addPixel(const QImage &ref, int x, int y)
+{
+    QColor c = ref.pixelColor(x,y);
+
+    if(isLow)
+    {
+        return (c.red() + c.blue() + c.green() <= threshold);
+    }
+    else
+    {
+        return (c.red() + c.blue() + c.green() >= threshold);
+    }
+}

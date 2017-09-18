@@ -151,6 +151,8 @@ void PureScene::run()
                 emit makeProgress(current, max);
 
             }
+
+            combinePuzzle(i);
         }
         if(QMessageBox::information(nullptr, "Success", "Processing suceeded.", QMessageBox::Ok | QMessageBox::Open) == QMessageBox::Open)
         {
@@ -161,6 +163,7 @@ void PureScene::run()
     {
         QMessageBox::critical(nullptr, "Error", "The processing chain must start with a loader and end with a saver.");
     }
+    replacePuzzle();
 
     delete PureCore::currentData;
 
@@ -195,5 +198,35 @@ void PureScene::hoverOutEffect(EffectGraphicsItem *e)
     e->setGraphicsEffect(noEffect);
     hovered = nullptr;
 
+}
+
+void PureScene::combinePuzzle(int from)
+{
+    for(int j = 0 ; j < 10 ; ++j)
+    {
+
+        for(int i = 0 ; i < from ; ++i)
+        {
+
+                QTimer time;
+                time.start(50);
+                while(time.remainingTime() > 0);
+                eitems[i].first.first->moveBy(1,0);
+                eitems[i].first.second->moveBy(1,0);
+
+                QCoreApplication::processEvents();
+
+        }
+
+    }
+}
+
+void PureScene::replacePuzzle()
+{
+    for(int i = 1 ; i < eitems.size() ; ++i)
+    {
+        eitems[i].first.first->moveBy(+marginRight,0);
+        eitems[i].first.second->moveBy(+marginRight, 0);
+    }
 }
 

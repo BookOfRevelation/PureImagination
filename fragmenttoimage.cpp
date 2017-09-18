@@ -24,7 +24,7 @@ void FragmentToImage::process()
 
     for(int i = 0 ; i < gldata->getImageCount() ; ++i)
     {
-        QImage& img = olddata->getImage(i);
+        QImage& img = olddata->getImage((i%olddata->getImageCount()));
         QImage& newimg = gldata->getImage(i);
 
         for(int x = 0; x < img.width() ; ++x)

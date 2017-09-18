@@ -41,6 +41,7 @@
 #include "scrollereffect.h"
 #include "fragmenttoimage.h"
 #include "imagetofragment.h"
+#include "stalactiteeffect.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -224,6 +225,7 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new FragmentToImage("FragmentToImage"));
         addEffect(new ImageToFragment("ImageToFragment"));
         addEffect(new ScrollerEffect("Scrolling Effect"));
+        addEffect(new StalactiteEffect("Dust"));
 
 
         pbar = new QProgressBar;

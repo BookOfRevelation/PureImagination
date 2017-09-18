@@ -69,7 +69,8 @@ SOURCES += main.cpp\
     scrollereffect.cpp \
     imagetofragment.cpp \
     purecondition.cpp \
-    fragmenttoimage.cpp
+    fragmenttoimage.cpp \
+    stalactiteeffect.cpp
 
 HEADERS  += mainwindow.h \
     gempuzzleeffect.h \
@@ -128,7 +129,8 @@ HEADERS  += mainwindow.h \
     scrollereffect.h \
     imagetofragment.h \
     purecondition.h \
-    fragmenttoimage.h
+    fragmenttoimage.h \
+    stalactiteeffect.h
 
 FORMS    +=
 

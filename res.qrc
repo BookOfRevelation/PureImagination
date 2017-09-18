@@ -41,5 +41,6 @@
         <file>examples/SymbioticMess.jpg</file>
         <file>examples/VisualCrush.jpg</file>
         <file>effects/Puzzle-transformater.png</file>
+        <file>examples/Dust.jpg</file>
     </qresource>
 </RCC>

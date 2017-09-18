@@ -47,7 +47,7 @@ void ImageToFragment::process()
         PureCore::noFragement->addImage(data->getImage(i), data->getName(i));
     }
 
-    PureCore::condition = new EvenCondition();
+    PureCore::condition = new ThresholdCondition(255, false);
     PureCore::condition->init();
 
 }

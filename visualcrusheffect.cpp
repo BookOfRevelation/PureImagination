@@ -92,7 +92,7 @@ void VisualCrushEffect::setParameters(QVector<QVariant> p)
 {
     gemwidget->rate = p[0].toInt();
 
-    gemwidget->update();
+    gemwidget->updateUI();
 }
 
 VisualCrushWidget::VisualCrushWidget()

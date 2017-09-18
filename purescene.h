@@ -4,10 +4,10 @@
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
 #include <QPainter>
-
+#include <QTimer>
 #include "pureeffect.h"
 #include "effectgraphicsitem.h"
-
+#include <QCoreApplication>
 class PureScene : public QGraphicsScene
 {
     Q_OBJECT
@@ -43,6 +43,10 @@ private:
 
     int curWidth;
 
+
+    void combinePuzzle(int from);
+
+    void replacePuzzle();
 
 
 };

@@ -31,4 +31,18 @@ public:
     bool addPixel(const QImage& ref, int x, int y);
 };
 
+class ThresholdCondition : public PureCondition
+{
+public:
+
+    ThresholdCondition(int t, bool low);
+
+    bool addPixel(const QImage &ref, int x, int y);
+
+private:
+
+    int threshold;
+    bool isLow;
+};
+
 #endif // PURECONDITION_H
