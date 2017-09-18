@@ -202,7 +202,7 @@ void PureScene::hoverOutEffect(EffectGraphicsItem *e)
 
 void PureScene::combinePuzzle(int from)
 {
-    for(int j = 0 ; j < 10 ; ++j)
+    for(int j = 0 ; j < 5 ; ++j)
     {
 
         for(int i = 0 ; i < from ; ++i)
@@ -211,8 +211,8 @@ void PureScene::combinePuzzle(int from)
                 QTimer time;
                 time.start(50);
                 while(time.remainingTime() > 0);
-                eitems[i].first.first->moveBy(1,0);
-                eitems[i].first.second->moveBy(1,0);
+                eitems[i].first.first->moveBy(10,0);
+                eitems[i].first.second->moveBy(10,0);
 
                 QCoreApplication::processEvents();
 
@@ -223,10 +223,13 @@ void PureScene::combinePuzzle(int from)
 
 void PureScene::replacePuzzle()
 {
-    for(int i = 1 ; i < eitems.size() ; ++i)
+    curWidth = 0;
+    for(int i = 0 ; i < eitems.size() ; ++i)
     {
-        eitems[i].first.first->moveBy(+marginRight,0);
-        eitems[i].first.second->moveBy(+marginRight, 0);
+        QPixmap pm = eitems[i].first.first->pixmap();
+        eitems[i].first.first->setPos(curWidth, 0.0);
+        eitems[i].first.second->setPos(curWidth, pm.height()-25);
+        curWidth = curWidth + marginRight + pm.width();
     }
 }
 

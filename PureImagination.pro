@@ -70,7 +70,11 @@ SOURCES += main.cpp\
     imagetofragment.cpp \
     purecondition.cpp \
     fragmenttoimage.cpp \
-    stalactiteeffect.cpp
+    stalactiteeffect.cpp \
+    purexyz.cpp \
+    xyzsaver.cpp \
+    xyztoimg.cpp \
+    xyzloader.cpp
 
 HEADERS  += mainwindow.h \
     gempuzzleeffect.h \
@@ -130,7 +134,11 @@ HEADERS  += mainwindow.h \
     imagetofragment.h \
     purecondition.h \
     fragmenttoimage.h \
-    stalactiteeffect.h
+    stalactiteeffect.h \
+    purexyz.h \
+    xyzsaver.h \
+    xyztoimg.h \
+    xyzloader.h
 
 FORMS    +=
 

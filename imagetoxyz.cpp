@@ -7,6 +7,8 @@
 #include <QDir>
 #include <QtMath>
 
+#include "pureimage.h"
+#include "purexyz.h"
 ImageToXYZ::ImageToXYZ(const QString &n)
     : PureTransformater(n),splitFactor(1.05)
 {
@@ -16,82 +18,41 @@ ImageToXYZ::ImageToXYZ(const QString &n)
 
 bool ImageToXYZ::init()
 {
-    bool result = false;
-
-    baseImages.clear();
-
-    QFileDialog dialog(nullptr);
-    dialog.setDirectory(PureCore::lastOpenDir);
-    dialog.setFileMode(QFileDialog::ExistingFiles);
-    dialog.setNameFilter("Images (*.jpg *.png)");
-    QStringList fileNames;
-    if(dialog.exec())
-    {
-        fileNames = dialog.selectedFiles();        
-        QString path;
-        foreach (path, fileNames)
-        {
-            PureCore::lastOpenDir = QFileInfo(path).absoluteDir().absolutePath();
-            baseImages.push_back(QImage(path));
-        }
-
-        targetFile = QFileDialog::getSaveFileName(nullptr, "Save File",
-                                                          PureCore::lastTargetDir,
-                                                          "Cloud point (*.xyz)");
-
-        result = (targetFile != "");
-        if(result)
-        {
-            QFile f(targetFile);
-            QFileInfo fi(f);
-            PureCore::lastTargetDir = fi.absoluteDir().absolutePath();
-        }
-        qDebug()<<targetFile;
-    }
-
-    return result;
+    return true;
 }
 
 
 void ImageToXYZ::process()
 {
-    bool result = true;
-    int occurences = 0;
-    int maxoccur = 0;
-    for(int i = 0 ; i < baseImages.size() ; ++i)
+    PureImage* img = static_cast<PureImage*>(PureCore::currentData);
+    PureXYZ* xyz = new PureXYZ;
+    QImage& base = img->getImage(0);
+    for(int i = 0 ; i < base.width(); ++i)
     {
-        maxoccur += (baseImages.at(i).width() * baseImages.at(i).height());
-    }
-
-    QFile file(targetFile);
-
-    result = (file.open(QIODevice::WriteOnly | QIODevice::Text));
-
-    if(result)
-    {
-        QTextStream out(&file);
-        for(int i = 0 ; i < baseImages.size() ; i++)
+        for(int j = 0 ; j < base.height() ; ++j)
         {
-            const QImage img = baseImages.at(i);
+            QColor pixelColor = base.pixelColor(i,j);
 
-            for(int w = 0 ; w < img.width() ; ++w)
-            {
-                for(int h = 0 ; h < img.height() ; ++h)
-                {
-                    QColor pixelColor = img.pixelColor(w, h);
-
-                    //out<<pixelColor.red()<<" "<<pixelColor.green()<<" "<<pixelColor.blue()<<" "<<pixelColor.red()<<" "<<pixelColor.green()<<" "<<pixelColor.blue()<<"\n";
-                    out<<w<<" "<<h<<" "<<qPow(pixelColor.red()+pixelColor.green()+pixelColor.blue(),splitFactor)<<"\n";
-                    emit makeProgress(occurences++, maxoccur);
-                }
-            }
+            xyz->addPoint(i, j, qPow(pixelColor.red()+pixelColor.green()+pixelColor.blue(),splitFactor) );
         }
 
-        file.close();
     }
 
+    delete img;
 
-    emit endEffect(result);
+    PureCore::currentData = xyz;
 
 
+}
+
+QVector<QVariant> ImageToXYZ::getParameters() const
+{
+    QVector<QVariant> res;
+    res.clear();;
+    return res;
+}
+
+void ImageToXYZ::setParameters(QVector<QVariant> p)
+{
+    Q_UNUSED(p);
 }

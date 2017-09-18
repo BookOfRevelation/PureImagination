@@ -18,7 +18,7 @@ void TextToImg::process()
 {
     PureText* txt = static_cast<PureText*>(PureCore::currentData);
     int count = txt->getText().size();
-    int cote = qFloor(qSqrt(count)/3);
+    int cote = qFloor(qSqrt(count/3));
     QImage img(cote, cote+1, QImage::Format_RGB32);
     img.fill(Qt::black);
     int cx = 0;

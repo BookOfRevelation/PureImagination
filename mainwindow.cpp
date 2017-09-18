@@ -11,6 +11,7 @@
 #include "tanglefusioneffect.h"
 #include "noizifiereffect.h"
 #include "rgbtohsv.h"
+#include "xyztoimg.h"
 #include "hsvtorgb.h"
 #include "oldvcreffect.h"
 #include "compositioneffect.h"
@@ -21,6 +22,7 @@
 #include "anaglypheffect.h"
 #include "tiltshifteffect.h"
 #include "gifloader.h"
+#include "xyzloader.h"
 //#include "wavloader.h"
 //#include "wavbinimage.h"
 #include "melteffect.h"
@@ -42,6 +44,7 @@
 #include "fragmenttoimage.h"
 #include "imagetofragment.h"
 #include "stalactiteeffect.h"
+#include "xyzsaver.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -196,7 +199,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
         addEffect(new GemPuzzleEffect("GemPuzzle"));
         addEffect(new ModuloPushEffect("ModuloPush"));
-        //addEffect(new ImageToXYZ(), "ImageToXYZ");
+        addEffect(new ImageToXYZ("ImageToXYZ"));
         //addEffect(new GhostFusionEffect( "GhostFusion"));
         addEffect(new RetriggerEffect("Retrigger") );
         addEffect(new VisualCrushEffect("VisualCrush") );
@@ -226,6 +229,9 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new ImageToFragment("ImageToFragment"));
         addEffect(new ScrollerEffect("Scrolling Effect"));
         addEffect(new StalactiteEffect("Dust"));
+        addEffect(new XYZSaver("XYZ Saver"));
+        addEffect(new XYZToImg("XYZToImage"));
+        addEffect(new XYZLoader("XYZ Loader"));
 
 
         pbar = new QProgressBar;
