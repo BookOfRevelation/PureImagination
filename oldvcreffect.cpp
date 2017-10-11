@@ -182,9 +182,9 @@ OldVcrWidget::OldVcrWidget()
 
     this->setLayout(mainLt);
 
-    connect(bwSS, SlideSpiner::valueChanged, this, OldVcrWidget::onBwModified);
-    connect(rateSS, SlideSpiner::valueChanged, this, OldVcrWidget::onRateModified);
-    connect(processBtn, QAbstractButton::pressed, this, &QDialog::accept);
+    connect(bwSS, &SlideSpiner::valueChanged, this, &OldVcrWidget::onBwModified);
+    connect(rateSS, &SlideSpiner::valueChanged, this, &OldVcrWidget::onRateModified);
+    connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
 }
 
 void OldVcrWidget::randomize()

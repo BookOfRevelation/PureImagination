@@ -119,8 +119,8 @@ VisualDownSamplingWidget::VisualDownSamplingWidget()
 
     this->setLayout(mainLt);
 
-    connect(rateSS, SlideSpiner::valueChanged, this, VisualDownSamplingWidget::onRateModified);
-    connect(processBtn, QAbstractButton::pressed, this, &QDialog::accept);
+    connect(rateSS, &SlideSpiner::valueChanged, this, &VisualDownSamplingWidget::onRateModified);
+    connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
 
 
 }

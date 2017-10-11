@@ -138,9 +138,9 @@ GradiantThresholdingWidget::GradiantThresholdingWidget(GradiantThresholdingEffec
 
     this->setLayout(mainLt);
 
-    connect(seuilSS, SlideSpiner::valueChanged, this, GradiantThresholdingWidget::onSeuilModified);
+    connect(seuilSS, &SlideSpiner::valueChanged, this, &GradiantThresholdingWidget::onSeuilModified);
 
-    connect(processBtn, QAbstractButton::pressed, this, [this]()
+    connect(processBtn, &QAbstractButton::pressed, this, [this]()
     {
         this->burgle->process();
     });

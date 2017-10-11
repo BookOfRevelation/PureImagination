@@ -136,10 +136,10 @@ ModuloPushWidget::ModuloPushWidget(ModuloPushEffect* effect)
 
     this->setLayout(mainLt);
 
-    connect(minHSS, SlideSpiner::valueChanged, this, ModuloPushWidget::onMinHModified);
-    connect(maxHSS, SlideSpiner::valueChanged, this, ModuloPushWidget::onMaxHModified);
-    connect(minWSS, SlideSpiner::valueChanged, this, ModuloPushWidget::onMinWModified);
-    connect(maxWSS, SlideSpiner::valueChanged, this, ModuloPushWidget::onMaxWModified);
+    connect(minHSS, &SlideSpiner::valueChanged, this, &ModuloPushWidget::onMinHModified);
+    connect(maxHSS, &SlideSpiner::valueChanged, this, &ModuloPushWidget::onMaxHModified);
+    connect(minWSS, &SlideSpiner::valueChanged, this, &ModuloPushWidget::onMinWModified);
+    connect(maxWSS, &SlideSpiner::valueChanged, this, &ModuloPushWidget::onMaxWModified);
     connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
 
 }

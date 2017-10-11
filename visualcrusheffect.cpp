@@ -116,8 +116,8 @@ VisualCrushWidget::VisualCrushWidget()
 
     this->setLayout(mainLt);
 
-    connect(rateSS, SlideSpiner::valueChanged, this, VisualCrushWidget::onRateModified);
-    connect(processBtn, QAbstractButton::pressed, this, &QDialog::accept);
+    connect(rateSS, &SlideSpiner::valueChanged, this, &VisualCrushWidget::onRateModified);
+    connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
 
 }
 

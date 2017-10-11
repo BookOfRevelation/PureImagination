@@ -31,9 +31,9 @@ SlideSpiner::SlideSpiner(const QString& name, const QString& unitName, int preci
                 spinBox,
                 static_cast<void(QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
                 this,
-                SlideSpiner::spinToSlide
+                &SlideSpiner::spinToSlide
                 );
-    connect(slider, QSlider::valueChanged, this, SlideSpiner::slideToSpin);
+    connect(slider, &QSlider::valueChanged, this, &SlideSpiner::slideToSpin);
 
 
 }

@@ -162,9 +162,9 @@ SymbioticMessWidget::SymbioticMessWidget()
 
     this->setLayout(mainLt);
 
-    connect(rateSS, SlideSpiner::valueChanged, this, SymbioticMessWidget::onRateModified);
-    connect(chanceSS, SlideSpiner::valueChanged, this, SymbioticMessWidget::onChanceModified);
-    connect(processBtn, QAbstractButton::pressed, this, &QDialog::accept);
+    connect(rateSS,     &SlideSpiner::valueChanged, this, &SymbioticMessWidget::onRateModified);
+    connect(chanceSS,   &SlideSpiner::valueChanged, this, &SymbioticMessWidget::onChanceModified);
+    connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
 
 }
 

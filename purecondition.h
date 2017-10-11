@@ -19,7 +19,7 @@ public:
 
 private:
 
-    QVector<QVector<QVector<bool>>> checkTable;
+    QVector<QVector<QVector<bool> > > checkTable;
 
 };
 

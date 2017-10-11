@@ -56,9 +56,9 @@ MainWindow::MainWindow(QWidget *parent) :
     setMouseTracking(true);
 
     QToolBar* tb = this->addToolBar("");
-    QAction* newAct = tb->addAction(QIcon(":/res/runicon.png"), "Run", this, MainWindow::run);
+    QAction* newAct = tb->addAction(QIcon(":/res/runicon.png"), "Run", this, &MainWindow::run);
     newAct->setShortcut(QKeySequence(tr("Ctrl+R")));
-    QAction* clearAct = tb->addAction(QIcon(":/res/newicon.png"), "New", this, MainWindow::clear);
+    QAction* clearAct = tb->addAction(QIcon(":/res/newicon.png"), "New", this, &MainWindow::clear);
     clearAct->setShortcut(QKeySequence::New);
 
     QAction* undoAct = undoStack->createUndoAction(tb);
@@ -128,7 +128,7 @@ MainWindow::MainWindow(QWidget *parent) :
     view->setScene(scene);
     mainLt->addWidget(view,1);
 
-    connect(effectTree, QTreeWidget::itemDoubleClicked, this, [this](QTreeWidgetItem *item, int column)
+    connect(effectTree, &QTreeWidget::itemDoubleClicked, this, [this](QTreeWidgetItem *item, int column)
     {
         if(!item->isDisabled())
         {
@@ -236,7 +236,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
         pbar = new QProgressBar;
         statusbar->addPermanentWidget(pbar);
+#ifdef WIN32
         statusbar->addPermanentWidget(new MonitoringWidget());
+#endif
         statusbar->showMessage("Ready.");
 
         updateEnabledEffects();
@@ -299,8 +301,8 @@ void MainWindow::addEffect(PureEffect *e)
 
     effects.push_back(e);
 
-    connect(this->scene, &PureScene::makeProgress, this, MainWindow::makeProgress);
-    connect(this->scene, &PureScene::endChain, this, MainWindow::effectProcessed);
+    connect(this->scene, &PureScene::makeProgress, this, &MainWindow::makeProgress);
+    connect(this->scene, &PureScene::endChain, this, &MainWindow::effectProcessed);
 }
 
 

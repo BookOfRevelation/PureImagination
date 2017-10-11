@@ -1,6 +1,7 @@
 #include "megamonitoring.h"
+#ifdef WIN32
 #include "Windows.h"
-
+#endif
 
 MegaMonitoring::MegaMonitoring()
 {

@@ -14,7 +14,7 @@ MultiImageToDir::MultiImageToDir()
     inputLe->setReadOnly(true);
     QPushButton* inputBtn = new QPushButton("Charger");
 
-    connect(inputBtn, QAbstractButton::pressed, this, MultiImageToDir::onInput);
+    connect(inputBtn, &QAbstractButton::pressed, this, &MultiImageToDir::onInput);
 
     inputLt->addWidget(inputLe);
     inputLt->addWidget(inputBtn);
@@ -29,7 +29,7 @@ MultiImageToDir::MultiImageToDir()
     outputLe->setReadOnly(true);
 
     QPushButton* outputBtn = new QPushButton("Définir");
-    connect(outputBtn, QAbstractButton::pressed, this, MultiImageToDir::onOutput);
+    connect(outputBtn, &QAbstractButton::pressed, this, &MultiImageToDir::onOutput);
     outputLt->addWidget(outputLe);
     outputLt->addWidget(outputBtn);
 

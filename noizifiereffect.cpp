@@ -102,8 +102,8 @@ NoizifierWidget::NoizifierWidget(NoizifierEffect* effect)
 
     this->setLayout(mainLt);
 
-    connect(rateSS, SlideSpiner::valueChanged, this, NoizifierWidget::onRateModified);
-    connect(processBtn, QAbstractButton::pressed, this, &QDialog::accept);
+    connect(rateSS, &SlideSpiner::valueChanged, this,& NoizifierWidget::onRateModified);
+    connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
 
 }
 

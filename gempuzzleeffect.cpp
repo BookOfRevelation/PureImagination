@@ -188,10 +188,10 @@ GemWidget::GemWidget()
 
     this->setLayout(mainLt);
 
-    connect(minHSS, SlideSpiner::valueChanged, this, GemWidget::onMinHModified);
-    connect(maxHSS, SlideSpiner::valueChanged, this, GemWidget::onMaxHModified);
-    connect(minWSS, SlideSpiner::valueChanged, this, GemWidget::onMinWModified);
-    connect(maxWSS, SlideSpiner::valueChanged, this, GemWidget::onMaxWModified);
+    connect(minHSS, &SlideSpiner::valueChanged, this, &GemWidget::onMinHModified);
+    connect(maxHSS, &SlideSpiner::valueChanged, this, &GemWidget::onMaxHModified);
+    connect(minWSS, &SlideSpiner::valueChanged, this, &GemWidget::onMinWModified);
+    connect(maxWSS, &SlideSpiner::valueChanged, this, &GemWidget::onMaxWModified);
     connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
 
 

@@ -231,12 +231,12 @@ AnaglyphWidget::AnaglyphWidget()
 
     this->setLayout(mainLt);
 
-    connect(rxSS, SlideSpiner::valueChanged, this, AnaglyphWidget::onRX);
-    connect(rySS, SlideSpiner::valueChanged, this, AnaglyphWidget::onRY);
-    connect(gxSS, SlideSpiner::valueChanged, this, AnaglyphWidget::onGX);
-    connect(gySS, SlideSpiner::valueChanged, this, AnaglyphWidget::onGY);
-    connect(bxSS, SlideSpiner::valueChanged, this, AnaglyphWidget::onBX);
-    connect(bySS, SlideSpiner::valueChanged, this, AnaglyphWidget::onBY);
+    connect(rxSS, &SlideSpiner::valueChanged, this, &AnaglyphWidget::onRX);
+    connect(rySS, &SlideSpiner::valueChanged, this, &AnaglyphWidget::onRY);
+    connect(gxSS, &SlideSpiner::valueChanged, this, &AnaglyphWidget::onGX);
+    connect(gySS, &SlideSpiner::valueChanged, this, &AnaglyphWidget::onGY);
+    connect(bxSS, &SlideSpiner::valueChanged, this, &AnaglyphWidget::onBX);
+    connect(bySS, &SlideSpiner::valueChanged, this, &AnaglyphWidget::onBY);
     connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
 
 

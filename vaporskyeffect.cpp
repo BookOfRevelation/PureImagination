@@ -125,9 +125,9 @@ VaporSkyWidget::VaporSkyWidget(VaporSkyEffect* effect)
 
     this->setLayout(mainLt);
 
-    connect(seuilSS, SlideSpiner::valueChanged, this, VaporSkyWidget::onSeuilModified);
+    connect(seuilSS, &SlideSpiner::valueChanged, this,& VaporSkyWidget::onSeuilModified);
 
-    connect(processBtn, QAbstractButton::pressed, this, [this]()
+    connect(processBtn, &QAbstractButton::pressed, this, [this]()
     {
         this->burgle->process();
     });

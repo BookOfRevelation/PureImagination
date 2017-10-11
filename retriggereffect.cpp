@@ -185,21 +185,21 @@ RetriggerWidget::RetriggerWidget()
 
     this->setLayout(mainLt);
 
-    connect(minHSS, SlideSpiner::valueChanged, this, RetriggerWidget::onMinHModified);
-    connect(maxHSS, SlideSpiner::valueChanged, this, RetriggerWidget::onMaxHModified);
-    connect(minWSS, SlideSpiner::valueChanged, this, RetriggerWidget::onMinWModified);
-    connect(maxWSS, SlideSpiner::valueChanged, this, RetriggerWidget::onMaxWModified);
+    connect(minHSS, &SlideSpiner::valueChanged, this, &RetriggerWidget::onMinHModified);
+    connect(maxHSS, &SlideSpiner::valueChanged, this, &RetriggerWidget::onMaxHModified);
+    connect(minWSS, &SlideSpiner::valueChanged, this, &RetriggerWidget::onMinWModified);
+    connect(maxWSS, &SlideSpiner::valueChanged, this, &RetriggerWidget::onMaxWModified);
 
-    connect(offsetWmnSS, SlideSpiner::valueChanged, this, RetriggerWidget::onMinOffsetWModified);
-    connect(offsetWmxSS, SlideSpiner::valueChanged, this, RetriggerWidget::onMaxOffsetWModified);
-    connect(offsetHmnSS, SlideSpiner::valueChanged, this, RetriggerWidget::onMinOffsetHModified);
-    connect(offsetHmxSS, SlideSpiner::valueChanged, this, RetriggerWidget::onMaxOffsetHModified);
+    connect(offsetWmnSS, &SlideSpiner::valueChanged, this, &RetriggerWidget::onMinOffsetWModified);
+    connect(offsetWmxSS, &SlideSpiner::valueChanged, this, &RetriggerWidget::onMaxOffsetWModified);
+    connect(offsetHmnSS, &SlideSpiner::valueChanged, this, &RetriggerWidget::onMinOffsetHModified);
+    connect(offsetHmxSS, &SlideSpiner::valueChanged, this, &RetriggerWidget::onMaxOffsetHModified);
 
-    connect(minRptSS, SlideSpiner::valueChanged, this, RetriggerWidget::onRepeatMinModified);
-    connect(maxRptSS, SlideSpiner::valueChanged, this, RetriggerWidget::onRepeatMaxModified);
-    connect(minNbSS, SlideSpiner::valueChanged, this, RetriggerWidget::onNumberMinModified);
-    connect(maxNbSS, SlideSpiner::valueChanged, this, RetriggerWidget::onNumberMaxModified);
-    connect(processBtn, QAbstractButton::pressed, this, &QDialog::accept);
+    connect(minRptSS, &SlideSpiner::valueChanged, this, &RetriggerWidget::onRepeatMinModified);
+    connect(maxRptSS, &SlideSpiner::valueChanged, this, &RetriggerWidget::onRepeatMaxModified);
+    connect(minNbSS,  &SlideSpiner::valueChanged, this, &RetriggerWidget::onNumberMinModified);
+    connect(maxNbSS,  &SlideSpiner::valueChanged, this, &RetriggerWidget::onNumberMaxModified);
+    connect(processBtn, &QAbstractButton::pressed, this, &QDialog::accept);
 
 }
 

@@ -21,7 +21,7 @@ public:
 
 private:
 
-    QVector<QPair<QImage, QString>> images;
+    QVector<QPair<QImage, QString> > images;
 
 };
 
