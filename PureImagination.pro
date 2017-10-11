@@ -74,7 +74,8 @@ SOURCES += main.cpp\
     purexyz.cpp \
     xyzsaver.cpp \
     xyztoimg.cpp \
-    xyzloader.cpp
+    xyzloader.cpp \
+    picturegoodizereffect.cpp
 
 HEADERS  += mainwindow.h \
     gempuzzleeffect.h \
@@ -138,7 +139,8 @@ HEADERS  += mainwindow.h \
     purexyz.h \
     xyzsaver.h \
     xyztoimg.h \
-    xyzloader.h
+    xyzloader.h \
+    picturegoodizereffect.h
 
 FORMS    +=
 

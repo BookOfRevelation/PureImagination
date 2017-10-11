@@ -45,6 +45,7 @@
 #include "imagetofragment.h"
 #include "stalactiteeffect.h"
 #include "xyzsaver.h"
+#include "picturegoodizereffect.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -232,6 +233,7 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new XYZSaver("XYZ Saver"));
         addEffect(new XYZToImg("XYZToImage"));
         addEffect(new XYZLoader("XYZ Loader"));
+        addEffect(new PictureGoodizerEffect("Picture Goodizer"));
 
 
         pbar = new QProgressBar;
