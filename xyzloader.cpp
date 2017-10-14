@@ -3,6 +3,7 @@
 #include <QTextStream>
 #include <QStringList>
 #include <QString>
+#include <QDebug>
 
 XYZLoader::XYZLoader(const QString& n)
     : PureLoader(n)
@@ -42,7 +43,16 @@ void XYZLoader::process()
     while(!line.isNull())
     {
         QStringList strs = line.split(" ");
-        xyz->addPoint(strs.at(0).toInt(), strs.at(1).toInt(), strs.at(2).toInt());
+        float x, y, z;
+
+        x = strs.at(0).toFloat();
+        y = strs.at(1).toFloat();
+        z = strs.at(2).toFloat();
+        xyz->addPoint(
+                    x,
+                    y,
+                    z
+                    );
         line = ts.readLine();
     }
 

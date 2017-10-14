@@ -46,6 +46,7 @@
 #include "stalactiteeffect.h"
 #include "xyzsaver.h"
 #include "picturegoodizereffect.h"
+#include "pixelsorteffect.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -234,6 +235,7 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new XYZToImg("XYZToImage"));
         addEffect(new XYZLoader("XYZ Loader"));
         addEffect(new PictureGoodizerEffect("Picture Goodizer"));
+        addEffect(new PixelSortEffect("Pixel sorting"));
 
 
         pbar = new QProgressBar;
