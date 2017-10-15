@@ -30,25 +30,30 @@ bool ImageLoader::init()
 
     }
 
+    if(filePaths.size() > 0)
+    {
+        PureImage* imgs = new PureImage;
+
+        for(int i = 0; i < filePaths.size() ; ++i)
+        {
+            QString name = filePaths[i];
+            QFile f(name);
+            QFileInfo fi(f);
+
+            QString fname = fi.fileName();
+
+            imgs->addImage(QImage(name), fname);
+        }
+
+        PureCore::currentData = imgs;
+    }
+
     return filePaths.size() > 0;
 }
 
 void ImageLoader::process()
 {
-    PureImage* imgs = new PureImage;
 
-    for(int i = 0; i < filePaths.size() ; ++i)
-    {
-        QString name = filePaths[i];
-        QFile f(name);
-        QFileInfo fi(f);
-
-        QString fname = fi.fileName();
-
-        imgs->addImage(QImage(name), fname);
-    }
-
-    PureCore::currentData = imgs;
 
 }
 
