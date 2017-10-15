@@ -79,3 +79,15 @@ bool ThresholdCondition::addPixel(const QImage &ref, int x, int y)
         return (c.red() + c.blue() + c.green() >= threshold);
     }
 }
+
+
+PaintCondition::PaintCondition(QVector<QVector<bool> > px)
+    : PureCondition(), pixels(px)
+{
+
+}
+
+bool PaintCondition::addPixel(const QImage &ref, int x, int y)
+{
+    return pixels[x][y];
+}

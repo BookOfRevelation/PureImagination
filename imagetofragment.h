@@ -6,11 +6,42 @@
 #include <QVariant>
 #include <QDialog>
 #include "puretransformater.h"
+#include "slidespiner.h"
+
+#include <QGraphicsView>
+#include <QMouseEvent>
+#include <QGraphicsItem>
+#include <QGraphicsRectItem>
+
+class FragmentView : public QGraphicsView
+{
+public:
+    FragmentView();
+
+    void init();
+
+    QGraphicsRectItem* selection;
+
+    void setSelSize(int c)
+    {
+        size = c;
+    }
+    int size;
+    virtual void mouseMoveEvent(QMouseEvent* e);
+};
 
 class FragmentWidget : public QDialog
 {
 public:
     FragmentWidget();
+    void init()
+    {
+        view->init();
+    }
+
+private:
+    FragmentView* view;
+    SlideSpiner* selectionSS;
 };
 
 class ImageToFragment : public PureTransformater
