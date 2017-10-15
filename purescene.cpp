@@ -165,8 +165,18 @@ void PureScene::run()
     }
     replacePuzzle();
 
-    delete PureCore::currentData;
+    if(PureCore::currentData)
+    {
+        delete PureCore::currentData;
+        PureCore::currentData = nullptr;
 
+    }
+    if(PureCore::noFragement)
+    {
+        delete PureCore::noFragement;
+        PureCore::noFragement = nullptr;
+    }
+    PureCore::currentOutput = PureCore::NoType;
 
 }
 
