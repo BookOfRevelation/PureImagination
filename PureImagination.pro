@@ -76,7 +76,8 @@ SOURCES += main.cpp\
     xyztoimg.cpp \
     xyzloader.cpp \
     picturegoodizereffect.cpp \
-    pixelsorteffect.cpp
+    pixelsorteffect.cpp \
+    reinterpreteffect.cpp
 
 HEADERS  += mainwindow.h \
     gempuzzleeffect.h \
@@ -142,7 +143,8 @@ HEADERS  += mainwindow.h \
     xyztoimg.h \
     xyzloader.h \
     picturegoodizereffect.h \
-    pixelsorteffect.h
+    pixelsorteffect.h \
+    reinterpreteffect.h
 
 FORMS    +=
 

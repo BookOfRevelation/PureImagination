@@ -47,6 +47,7 @@
 #include "xyzsaver.h"
 #include "picturegoodizereffect.h"
 #include "pixelsorteffect.h"
+#include "reinterpreteffect.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -236,6 +237,7 @@ MainWindow::MainWindow(QWidget *parent) :
         addEffect(new XYZLoader("XYZ Loader"));
         addEffect(new PictureGoodizerEffect("Picture Goodizer"));
         addEffect(new PixelSortEffect("Pixel sorting"));
+        addEffect(new ReinterpretEffect("Reinterpretation"));
 
 
         pbar = new QProgressBar;
