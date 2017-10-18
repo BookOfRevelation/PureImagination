@@ -42,5 +42,8 @@
         <file>examples/VisualCrush.jpg</file>
         <file>effects/Puzzle-transformater.png</file>
         <file>examples/Dust.jpg</file>
+        <file>examples/Picture Goodizer.jpg</file>
+        <file>examples/Pixel sorting.jpg</file>
+        <file>examples/Reinterpretation.jpg</file>
     </qresource>
 </RCC>
