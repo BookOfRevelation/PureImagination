@@ -54,6 +54,23 @@ bool ImageLoader::init()
 void ImageLoader::process()
 {
 
+    if(!PureCore::currentData)
+    {
+        PureImage* imgs = new PureImage;
+
+        for(int i = 0; i < filePaths.size() ; ++i)
+        {
+            QString name = filePaths[i];
+            QFile f(name);
+            QFileInfo fi(f);
+
+            QString fname = fi.fileName();
+
+            imgs->addImage(QImage(name), fname);
+        }
+
+        PureCore::currentData = imgs;
+    }
 
 }
 
