@@ -22,12 +22,23 @@ public:
 
     QGraphicsRectItem* selection;
 
+    QVector<QVector<bool> > points;
+
     void setSelSize(int c)
     {
         size = c;
     }
     int size;
     virtual void mouseMoveEvent(QMouseEvent* e);
+    virtual void mousePressEvent(QMouseEvent* e);
+    virtual void mouseReleaseEvent(QMouseEvent* e);
+
+    QGraphicsPixmapItem* item;
+
+private:
+    void activePixel(QMouseEvent* e);
+
+    int buttonState;
 };
 
 class FragmentWidget : public QDialog
@@ -39,8 +50,8 @@ public:
         view->init();
     }
 
-private:
     FragmentView* view;
+private:
     SlideSpiner* selectionSS;
 };
 

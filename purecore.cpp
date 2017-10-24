@@ -14,6 +14,7 @@ PureCore::PureType PureCore::currentOutput;
 PureData* PureCore::currentData;
 PureImage* PureCore::noFragement;
 PureCondition* PureCore::condition;
+QVector<QVector<bool>> PureCore::conditionPoints;
 
 PureCore::PureCore()
 {

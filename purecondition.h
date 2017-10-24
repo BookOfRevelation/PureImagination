@@ -47,6 +47,7 @@ private:
 
 class PaintCondition : public PureCondition
 {
+public:
     PaintCondition(QVector<QVector<bool>> px);
 
     bool addPixel(const QImage &ref, int x, int y) override;

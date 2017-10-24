@@ -39,6 +39,8 @@ public:
     static PureImage* noFragement;
     static PureCondition* condition;
 
+    static QVector<QVector<bool>> conditionPoints;
+
 
     static QString TypeToStr(PureType n);
 
